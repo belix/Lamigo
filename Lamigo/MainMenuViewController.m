@@ -32,8 +32,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.menuTitles = @[@"Gewinnspiele", @"Deine Preise",@"Partner", @"Tutorial",@"FAQ"];
-    self.menuIcons = @[@"home-icon", @"price-icon", @"help-icon", @"info-icon",@"help-icon"];
+    self.menuTitles = @[@"Lamigoo", @"Chats",@"Settings", @"Help"];
+    self.menuIcons = @[@"home-icon", @"chats-icon", @"settings-icon", @"help-icon"];
     self.loginClient = [[LoginClient alloc] init];
     self.loginClient.delegate = self;
     self.profilePictureImageView.layer.cornerRadius = 25;
@@ -79,11 +79,13 @@
             [self.sideMenuViewController hideMenuViewController];
             break;
         case 1:
+            break;
             [self.sideMenuViewController setContentViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"couponNavController"]
                                                          animated:YES];
             [self.sideMenuViewController hideMenuViewController];
-            break;
+
         case 2:
+            break;
             [self.sideMenuViewController setContentViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"partnerNavController"]
                                                          animated:YES];
             [self.sideMenuViewController hideMenuViewController];

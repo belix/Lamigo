@@ -52,9 +52,9 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    if ([FBSDKAccessToken currentAccessToken])
+    if ([User currentUser])
     {
-//        [self performSegueWithIdentifier:@"showStartscreenViewController" sender:nil];
+        [self performSegueWithIdentifier:@"showStartscreenViewController" sender:nil];
         NSLog(@"user already logged in");
         // User is logged in, do work such as go to next view controller.
     }
@@ -64,7 +64,7 @@
 
 - (IBAction)loginSignupButtonPressed:(id)sender
 {
-    [self performSegueWithIdentifier:@"showStartscreenViewController" sender:nil];
+
 }
 
 

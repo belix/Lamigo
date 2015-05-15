@@ -23,6 +23,7 @@
 		0503D28F1B03D76C00BC1ACE /* MainMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0503D28B1B03D76C00BC1ACE /* MainMenuTableViewCell.m */; };
 		0503D2901B03D76C00BC1ACE /* MenuRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0503D28D1B03D76C00BC1ACE /* MenuRootViewController.m */; };
 		0503D2951B03F1AE00BC1ACE /* MatchingClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 0503D2941B03F1AE00BC1ACE /* MatchingClient.m */; };
+		0522A44B1B064A0700BCFA5B /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0522A44A1B064A0700BCFA5B /* RootViewController.m */; };
 		0538C7A11B05580800D0690E /* RegistrationContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0538C7A01B05580800D0690E /* RegistrationContainerViewController.m */; };
 		0538C7A71B061DBB00D0690E /* RegistrationStepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0538C7A61B061DBB00D0690E /* RegistrationStepViewController.m */; };
 		0538C7AA1B061DE300D0690E /* RegistrationNativeLanguageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0538C7A91B061DE300D0690E /* RegistrationNativeLanguageViewController.m */; };
@@ -73,6 +74,8 @@
 		0503D2931B03F1AE00BC1ACE /* MatchingClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MatchingClient.h; path = NetworkLayer/MatchingClient.h; sourceTree = "<group>"; };
 		0503D2941B03F1AE00BC1ACE /* MatchingClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MatchingClient.m; path = NetworkLayer/MatchingClient.m; sourceTree = "<group>"; };
 		0503D2961B03F34700BC1ACE /* MatchingClientDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MatchingClientDelegate.h; path = NetworkLayer/MatchingClientDelegate.h; sourceTree = "<group>"; };
+		0522A4491B064A0700BCFA5B /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		0522A44A1B064A0700BCFA5B /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		0538C79F1B05580800D0690E /* RegistrationContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegistrationContainerViewController.h; path = UI/Registration/RegistrationContainerViewController.h; sourceTree = "<group>"; };
 		0538C7A01B05580800D0690E /* RegistrationContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegistrationContainerViewController.m; path = UI/Registration/RegistrationContainerViewController.m; sourceTree = "<group>"; };
 		0538C7A51B061DBB00D0690E /* RegistrationStepViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegistrationStepViewController.h; path = UI/Registration/RegistrationStepViewController.h; sourceTree = "<group>"; };
@@ -141,6 +144,8 @@
 				0503D2791B03C00000BC1ACE /* LoginViewController.m */,
 				0503D2851B03CC9700BC1ACE /* StartScreenViewController.h */,
 				0503D2861B03CC9700BC1ACE /* StartScreenViewController.m */,
+				0522A4491B064A0700BCFA5B /* RootViewController.h */,
+				0522A44A1B064A0700BCFA5B /* RootViewController.m */,
 				0503D2801B03C77600BC1ACE /* ApplicationLayer */,
 				0503D27B1B03C73400BC1ACE /* NetworkLayer */,
 				0503D25C1B03838300BC1ACE /* Main.storyboard */,
@@ -412,6 +417,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0538C7B51B062FB400D0690E /* RegistrationStepTableViewCell.m in Sources */,
+				0522A44B1B064A0700BCFA5B /* RootViewController.m in Sources */,
 				0538C7AD1B061DF500D0690E /* RegistrationLearningLanguageViewController.m in Sources */,
 				0503D27F1B03C74900BC1ACE /* LoginClient.m in Sources */,
 				0503D2841B03C79700BC1ACE /* User.m in Sources */,

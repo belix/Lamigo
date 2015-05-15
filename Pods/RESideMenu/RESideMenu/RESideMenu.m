@@ -86,19 +86,19 @@
     
     _animationDuration = 0.35f;
     _interactivePopGestureRecognizerEnabled = YES;
-  
-    _menuViewControllerTransformation = CGAffineTransformMakeScale(1.5f, 1.5f);
+    
+    _menuViewControllerTransformation = CGAffineTransformMakeScale(1.0f, 1.0f);
     
     _scaleContentView = YES;
     _scaleBackgroundImageView = YES;
     _scaleMenuView = YES;
     _fadeMenuView = YES;
     
-    _parallaxEnabled = YES;
-    _parallaxMenuMinimumRelativeValue = -15;
-    _parallaxMenuMaximumRelativeValue = 15;
-    _parallaxContentMinimumRelativeValue = -25;
-    _parallaxContentMaximumRelativeValue = 25;
+    _parallaxEnabled = NO;
+    _parallaxMenuMinimumRelativeValue = 0;
+    _parallaxMenuMaximumRelativeValue = 0;
+    _parallaxContentMinimumRelativeValue = 0;
+    _parallaxContentMaximumRelativeValue = 0;
     
     _bouncesHorizontally = YES;
     
@@ -112,8 +112,8 @@
     _contentViewShadowOpacity = 0.4f;
     _contentViewShadowRadius = 8.0f;
     _contentViewInLandscapeOffsetCenterX = 30.f;
-    _contentViewInPortraitOffsetCenterX  = 30.f;
-    _contentViewScaleValue = 0.7f;
+    _contentViewInPortraitOffsetCenterX  = 120.f;
+    _contentViewScaleValue = 1;
 }
 
 #pragma mark -
