@@ -10,11 +10,10 @@
 #import "User.h"
 #import "MatchingClient.h"
 #import "MatchingDetailViewController.h"
+#import "MBProgressHUD.h"
 #import <QuartzCore/QuartzCore.h>
 
 @interface StartScreenViewController () <MatchingClientDelegate>
-
-@property (weak, nonatomic) IBOutlet UIImageView *profilePicture;
 
 @property (nonatomic, strong) MatchingClient *matchingClient;
 @property (nonatomic, strong) MatchingDetailViewController *matchingDetailViewController;
@@ -28,10 +27,11 @@
     [super viewDidLoad];
     MatchingClient *matchingClient = [[MatchingClient alloc] init];
     matchingClient.delegate = self;
-    [matchingClient fetchAllPossibleUser];
-    
-    self.profilePicture.layer.cornerRadius = self.profilePicture.frame.size.width/2;
-    self.profilePicture.clipsToBounds = YES;
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+        
+        [matchingClient fetchAllPossibleUser];
+    });
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,8 +48,12 @@
 
 - (void)possibleUserLoaded:(NSArray *)users
 {
-    NSData *imageData = [[NSData alloc] initWithBase64EncodedString:users[0][@"profilePicture"] options:0];
-    self.profilePicture.image = [UIImage imageWithData:imageData];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSLog(@"users.count %ld",users.count);
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        self.matchingDetailViewController.users = users;
+    });
+
 }
 
 

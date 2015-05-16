@@ -13,6 +13,7 @@
 @optional
 - (void)signUpSuccessful;
 - (void)loginSuccessful;
+- (void)facebookUserNotAvailable;
 - (void)loginFailedWithError:(NSString *)error;
 - (void)logoutSuccessful;
 

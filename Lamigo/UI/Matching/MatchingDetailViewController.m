@@ -8,11 +8,13 @@
 
 #import "MatchingDetailViewController.h"
 #import "MatchingProfileImageView.h"
+#import "FlippingCardDelegate.h"
 
-@interface MatchingDetailViewController ()
+@interface MatchingDetailViewController () <FlippingCardDelegate>
 
-@property (weak, nonatomic) IBOutlet UIImageView *profilePicture;
 @property (weak, nonatomic) IBOutlet MatchingProfileImageView *profilePictureView;
+@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
+@property (nonatomic) NSInteger userIndex;
 
 @end
 
@@ -21,6 +23,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.profilePictureView.delegate = self;
+    self.userIndex = 0;
 }
 
 - (void)didReceiveMemoryWarning
@@ -28,9 +32,50 @@
     [super didReceiveMemoryWarning];
 }
 
+#pragma mark - Setter
+
+- (void)setUsers:(NSArray *)users
+{
+    _users = users;
+    [self updateUI];
+}
+
+- (void)updateUI
+{
+    
+    if(_users[self.userIndex])
+    {
+        User *user = _users[self.userIndex];
+        self.profilePictureView.frontPicture.image = [UIImage imageWithData:user.profilePicture];
+        self.usernameLabel.text = user.username;
+    }
+    if(_users[self.userIndex+1])
+    {
+        User *user = _users[self.userIndex+1];
+        self.profilePictureView.backPicture.image = [UIImage imageWithData:user.profilePicture];
+    }
+    self.profilePictureView.front.hidden = NO;
+    self.profilePictureView.back.hidden = YES;
+}
+
 - (void)userDeclined
 {
     [self.profilePictureView flip];
+}
+
+#pragma mark - FlippingCardDelegate
+
+- (void)cardFlippingFinished
+{
+    self.userIndex++;
+    if (self.userIndex >= self.users.count - 1)
+    {
+        NSLog(@"no more matches");
+    }
+    else
+    {
+        [self updateUI];
+    }
 }
 
 /*

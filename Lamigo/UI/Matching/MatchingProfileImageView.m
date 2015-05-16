@@ -12,8 +12,26 @@
 
 @implementation MatchingProfileImageView
 
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    
+    self.frontPicture.layer.cornerRadius = self.frontPicture.frame.size.width/2;
+    self.frontPicture.clipsToBounds = YES;
+    self.backPicture.layer.cornerRadius = self.backPicture.frame.size.width/2;
+    self.backPicture.clipsToBounds = YES;
+}
+
+- (void)resetCard
+{
+    [self.front.layer removeAllAnimations];
+    [self.back.layer removeAllAnimations];
+}
+
 - (void)flip
 {
+    [self resetCard];
+    
     CFTimeInterval duration = 0.3;
     CGFloat xScale = 1;
     CGFloat yScale = 1;
@@ -42,6 +60,8 @@
     backAnimation.removedOnCompletion = NO;
     
     [backAnimation setCompletion:^(BOOL finished) {
+        [self.delegate cardFlippingFinished];
+        [self resetCard];
     }];
     
     [frontAnimation setCompletion:^(BOOL finished) {

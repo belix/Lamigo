@@ -34,6 +34,7 @@
 		0538C7B21B06223B00D0690E /* RegistrationUniversalLanguageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0538C7B11B06223B00D0690E /* RegistrationUniversalLanguageViewController.m */; };
 		0538C7B51B062FB400D0690E /* RegistrationStepTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0538C7B41B062FB400D0690E /* RegistrationStepTableViewCell.m */; };
 		0538C7B81B06391D00D0690E /* RegistrationInterestsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0538C7B71B06391D00D0690E /* RegistrationInterestsViewController.m */; };
+		0540631C1B077140000230EE /* RegistrationProfilePictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0540631B1B077140000230EE /* RegistrationProfilePictureViewController.m */; };
 		05B909761B06DB4D0002DFD8 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B909751B06DB4D0002DFD8 /* SettingsViewController.m */; };
 		05B909791B06E7820002DFD8 /* SettingsInterestsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B909781B06E7820002DFD8 /* SettingsInterestsTableViewCell.m */; };
 /* End PBXBuildFile section */
@@ -101,6 +102,9 @@
 		0538C7B41B062FB400D0690E /* RegistrationStepTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegistrationStepTableViewCell.m; path = UI/Registration/RegistrationStepTableViewCell.m; sourceTree = "<group>"; };
 		0538C7B61B06391D00D0690E /* RegistrationInterestsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegistrationInterestsViewController.h; path = UI/Registration/RegistrationInterestsViewController.h; sourceTree = "<group>"; };
 		0538C7B71B06391D00D0690E /* RegistrationInterestsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegistrationInterestsViewController.m; path = UI/Registration/RegistrationInterestsViewController.m; sourceTree = "<group>"; };
+		0540631A1B077140000230EE /* RegistrationProfilePictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegistrationProfilePictureViewController.h; path = UI/Registration/RegistrationProfilePictureViewController.h; sourceTree = "<group>"; };
+		0540631B1B077140000230EE /* RegistrationProfilePictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegistrationProfilePictureViewController.m; path = UI/Registration/RegistrationProfilePictureViewController.m; sourceTree = "<group>"; };
+		0540631D1B07A175000230EE /* FlippingCardDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlippingCardDelegate.h; path = UI/Matching/FlippingCardDelegate.h; sourceTree = "<group>"; };
 		05B909741B06DB4D0002DFD8 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewController.h; path = UI/Settings/SettingsViewController.h; sourceTree = "<group>"; };
 		05B909751B06DB4D0002DFD8 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = UI/Settings/SettingsViewController.m; sourceTree = "<group>"; };
 		05B909771B06E7820002DFD8 /* SettingsInterestsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsInterestsTableViewCell.h; path = UI/Settings/SettingsInterestsTableViewCell.h; sourceTree = "<group>"; };
@@ -267,6 +271,7 @@
 				0503D2861B03CC9700BC1ACE /* StartScreenViewController.m */,
 				0524A3291B0669F0002A0497 /* MatchingProfileImageView.h */,
 				0524A32A1B0669F0002A0497 /* MatchingProfileImageView.m */,
+				0540631D1B07A175000230EE /* FlippingCardDelegate.h */,
 				0524A3261B066412002A0497 /* MatchingDetailViewController.h */,
 				0524A3271B066412002A0497 /* MatchingDetailViewController.m */,
 			);
@@ -288,6 +293,8 @@
 			children = (
 				0538C7A51B061DBB00D0690E /* RegistrationStepViewController.h */,
 				0538C7A61B061DBB00D0690E /* RegistrationStepViewController.m */,
+				0540631A1B077140000230EE /* RegistrationProfilePictureViewController.h */,
+				0540631B1B077140000230EE /* RegistrationProfilePictureViewController.m */,
 				0538C7A81B061DE300D0690E /* RegistrationNativeLanguageViewController.h */,
 				0538C7A91B061DE300D0690E /* RegistrationNativeLanguageViewController.m */,
 				0538C7AB1B061DF500D0690E /* RegistrationLearningLanguageViewController.h */,
@@ -475,6 +482,7 @@
 				0503D2551B03838300BC1ACE /* AppDelegate.m in Sources */,
 				05B909791B06E7820002DFD8 /* SettingsInterestsTableViewCell.m in Sources */,
 				0538C7A11B05580800D0690E /* RegistrationContainerViewController.m in Sources */,
+				0540631C1B077140000230EE /* RegistrationProfilePictureViewController.m in Sources */,
 				0524A32B1B0669F0002A0497 /* MatchingProfileImageView.m in Sources */,
 				0538C7AA1B061DE300D0690E /* RegistrationNativeLanguageViewController.m in Sources */,
 				05B909761B06DB4D0002DFD8 /* SettingsViewController.m in Sources */,

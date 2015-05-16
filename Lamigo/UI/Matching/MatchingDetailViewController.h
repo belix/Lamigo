@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "User.h"
 
 @interface MatchingDetailViewController : UIViewController
+
+
+@property (nonatomic, strong) NSArray *users;
 
 - (void)userDeclined;
 

@@ -14,6 +14,9 @@
 @interface LoginClient : NSObject
 
 - (void)signUpWithForUser:(User *)user;
+- (void)loginWithFacebook:(NSString *)facebookID;
+
+
 - (void)loginWithUsername:(NSString *)username andPassword:(NSString *)password;
 - (void)loginWithFacebook;
 - (void)logout;

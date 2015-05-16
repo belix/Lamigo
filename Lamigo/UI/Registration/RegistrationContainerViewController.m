@@ -12,10 +12,13 @@
 #import "RegistrationLearningLanguageViewController.h"
 #import "RegistrationUniversalLanguageViewController.h"
 #import "RegistrationInterestsViewController.h"
+#import "RegistrationProfilePictureViewController.h"
 #import "LoginClient.h"
+#import "MBProgressHUD.h"
 
 @interface RegistrationContainerViewController () <LoginClientDelegate>
 
+@property (weak, nonatomic) IBOutlet UIView *profilePictureContainer;
 @property (weak, nonatomic) IBOutlet UIView *nativeLanguageContainer;
 @property (weak, nonatomic) IBOutlet UIView *worldLanguageContainer;
 @property (weak, nonatomic) IBOutlet UIView *learningLanguageContainer;
@@ -36,7 +39,7 @@
     [super viewDidLoad];
     
     self.registrationStep = 0;
-    self.registrationSteps = @[self.nativeLanguageContainer,self.learningLanguageContainer,self.worldLanguageContainer,self.interestsContainer];
+    self.registrationSteps = @[self.profilePictureContainer,self.nativeLanguageContainer,self.learningLanguageContainer,self.worldLanguageContainer,self.interestsContainer];
     self.loginClient = [[LoginClient alloc] init];
     self.loginClient.delegate = self;
 }
@@ -64,7 +67,11 @@
 {
     for (RegistrationStepViewController *stepController in self.registrationStepsViewControllers)
     {
-        if ([stepController isKindOfClass:[RegistrationNativeLanguageViewController class]])
+        if ([stepController isKindOfClass:[RegistrationProfilePictureViewController class]])
+        {
+            self.currentUser.profilePicture = UIImagePNGRepresentation(((RegistrationProfilePictureViewController *)stepController).profileImage);
+        }
+        else if ([stepController isKindOfClass:[RegistrationNativeLanguageViewController class]])
         {
             self.currentUser.nativeLanguage = ((RegistrationNativeLanguageViewController *)stepController).selectedNativeLanguage;
         }
@@ -81,7 +88,14 @@
             self.currentUser.interests = ((RegistrationInterestsViewController *)stepController).selectedInterests;
         }
     }
-    [self.loginClient signUpWithForUser:self.currentUser];
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+
+        [self.loginClient signUpWithForUser:self.currentUser];
+
+    });
+    
 }
 
 #pragma mark - IBActions
@@ -161,7 +175,11 @@
 
 - (void)signUpSuccessful
 {
-    [self performSegueWithIdentifier:@"showStartscreenViewController" sender:nil];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        [self performSegueWithIdentifier:@"showStartscreenViewController" sender:nil];
+    });
+
 }
 
 #pragma mark - Navigation
@@ -172,6 +190,10 @@
     if ([segueName isEqualToString: @"registrationStepSegue"])
     {
         RegistrationStepViewController * childViewController = (RegistrationStepViewController *) [segue destinationViewController];
+        if ([childViewController isKindOfClass:[RegistrationProfilePictureViewController class]])
+        {
+            ((RegistrationProfilePictureViewController *)childViewController).profileImage = [UIImage imageWithData:self.currentUser.profilePicture];
+        }
         [self.registrationStepsViewControllers addObject:childViewController];
     }
 }

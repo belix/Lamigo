@@ -20,6 +20,7 @@
 @property (nonatomic, strong) NSString *nativeLanguage;
 @property (nonatomic, strong) NSString *learningLanguage;
 @property (nonatomic, strong) NSString *universalLanguage;
+@property (nonatomic, strong) NSString *password;
 @property (nonatomic, strong) NSMutableArray *interests;
 
 + (void)logOut;

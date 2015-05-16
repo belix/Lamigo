@@ -7,11 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FlippingCardDelegate.h"
 
 @interface MatchingProfileImageView : UIView
 
-@property (nonatomic, weak) IBOutlet UIImageView *front;
-@property (nonatomic, weak) IBOutlet UIImageView *back;
+@property (nonatomic, weak) IBOutlet UIView *front;
+@property (nonatomic, weak) IBOutlet UIView *back;
+
+@property (nonatomic, weak) IBOutlet UIImageView *frontPicture;
+@property (nonatomic, weak) IBOutlet UIImageView *backPicture;
+
+@property (nonatomic, weak) id <FlippingCardDelegate> delegate;
 
 - (void)flip;
 

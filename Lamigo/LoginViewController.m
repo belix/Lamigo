@@ -64,7 +64,14 @@
 
 - (IBAction)loginSignupButtonPressed:(id)sender
 {
-
+    if (self.loginViewExpanded)
+    {
+        self.currentUser = [[User alloc] init];
+        self.currentUser.username = self.usernameTextField.text;
+        self.currentUser.email = self.emailTextField.text;
+        self.currentUser.password = self.passwordTextField.text;
+        [self performSegueWithIdentifier:@"showRegistrationSequence" sender:nil];
+    }
 }
 
 
@@ -91,7 +98,7 @@
                         options: UIViewAnimationOptionCurveEaseIn
                      animations:^{
                          self.expandableView.alpha = 1;
-                         self.loginViewHeightConstraint.constant = 270;
+                         self.loginViewHeightConstraint.constant = 220;
                          [self.view layoutIfNeeded];
                      }
                      completion:^(BOOL finished){
@@ -136,30 +143,10 @@
 didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
                 error:(NSError *)error
 {
-    if ([FBSDKAccessToken currentAccessToken]) {
-        [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:nil]
-         startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
-             if (!error) {
-                 NSLog(@"fetched user:%@", result);
-                 NSString *userImageURL = [NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=large", result[@"id"]];
-                 
-                 // download the image asynchronously
-                 [self downloadImageWithURL:[NSURL URLWithString:userImageURL] completionBlock:^(BOOL succeeded, UIImage *image) {
-                     if (succeeded)
-                     {
-                         self.currentUser = [[User alloc] init];
-                         self.currentUser.username = result[@"name"];
-                         self.currentUser.email = @"";
-                         self.currentUser.gender = 1;
-                         self.currentUser.birthday = @"";
-                         self.currentUser.facebookID = result[@"id"];
-                         self.currentUser.profilePicture = UIImagePNGRepresentation(image);
-                         [self performSegueWithIdentifier:@"showRegistrationSequence" sender:nil];
-                     }
-                 }];
-
-             }
-         }];
+    if ([FBSDKAccessToken currentAccessToken])
+    {
+        //check if user already exists
+        [self.loginClient loginWithFacebook:[FBSDKAccessToken currentAccessToken].userID];
     }
     
     NSLog(@"result %@",result);
@@ -188,10 +175,36 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
 
 #pragma mark - LoginClientDelegate
 
+- (void)facebookUserNotAvailable
+{
+    [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:nil]
+     startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+         if (!error) {
+             NSLog(@"fetched user:%@", result);
+             NSString *userImageURL = [NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=large", result[@"id"]];
+             
+             // download the image asynchronously
+             [self downloadImageWithURL:[NSURL URLWithString:userImageURL] completionBlock:^(BOOL succeeded, UIImage *image) {
+                 if (succeeded)
+                 {
+                     self.currentUser = [[User alloc] init];
+                     self.currentUser.username = result[@"name"];
+                     self.currentUser.email = @"";
+                     self.currentUser.gender = 1;
+                     self.currentUser.birthday = @"";
+                     self.currentUser.facebookID = result[@"id"];
+                     self.currentUser.profilePicture = UIImagePNGRepresentation(image);
+                     [self performSegueWithIdentifier:@"showRegistrationSequence" sender:nil];
+                 }
+             }];
+             
+         }
+     }];
+}
+
 - (void)loginSuccessful
 {
-//    [self performSegueWithIdentifier:@"showRegistrationSequence" sender:nil];
-//    [self performSegueWithIdentifier:@"showStartscreenViewController" sender:nil];
+    [self performSegueWithIdentifier:@"showStartscreenViewController" sender:nil];
 }
 
 #pragma mark - Navigation

@@ -10,7 +10,7 @@
 #import "AFNetworking.h"
 #import "User.h"
 
-static NSString * const BaseURLString = @"http://localhost:8888/";
+static NSString * const BaseURLString = @"http://vidiviciserver-dev.elasticbeanstalk.com/";
 
 @implementation MatchingClient
 
@@ -29,8 +29,20 @@ static NSString * const BaseURLString = @"http://localhost:8888/";
     
     [manager POST:@"allPossibleUser" parameters:params success:^(NSURLSessionDataTask *task, id responseObject)
     {
+        NSMutableArray *users = [[NSMutableArray alloc] init];
+        for(NSDictionary *userDict in responseObject)
+        {
+            User *user = [[User alloc] init];
+            user.ID = userDict[@"id"];
+            user.username = userDict[@"name"];
+            user.learningLanguage = userDict[@"learningLanguage"];
+            user.nativeLanguage = userDict[@"nativeLanguage"];
+            user.universalLanguage = userDict[@"universalLanguage"];
+            user.profilePicture = [[NSData alloc] initWithBase64EncodedString:userDict[@"profilePicture"] options:0];
+            [users addObject:user];
+        }
         
-        NSLog(@"response %@",responseObject);
+        [self.delegate possibleUserLoaded:users];
 
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         
