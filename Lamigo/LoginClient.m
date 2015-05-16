@@ -26,7 +26,7 @@ static NSString * const BaseURLString = @"http://localhost:8888/";
     NSURL *baseURL = [NSURL URLWithString:BaseURLString];
     NSDictionary *params = @{@"name": user.username,
                              @"password": @"",
-                             @"email": user.email,
+                             @"email": user.facebookID,
                              @"profilePicture" : encodedString,
                              @"facebookID" : user.facebookID,
                              @"nativeLanguage" : user.nativeLanguage,
@@ -35,11 +35,12 @@ static NSString * const BaseURLString = @"http://localhost:8888/";
     
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:baseURL];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
 
     [manager POST:@"createUser" parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
         
         NSLog(@"response %@",responseObject);
-        
+        user.ID = responseObject[@"id"];
         NSData *encodedObject = [NSKeyedArchiver archivedDataWithRootObject:user];
         [[NSUserDefaults standardUserDefaults] setObject:encodedObject forKey:@"currentUser"];
         [[NSUserDefaults standardUserDefaults] synchronize];

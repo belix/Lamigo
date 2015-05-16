@@ -10,37 +10,39 @@
 #import "AFNetworking.h"
 #import "User.h"
 
-static NSString * const BaseURLString = @"http://localhost:8888/allPossibleUser";
+static NSString * const BaseURLString = @"http://localhost:8888/";
 
 @implementation MatchingClient
 
 - (void)fetchAllPossibleUser
 {
-    NSURL *url = [NSURL URLWithString:BaseURLString];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    NSURL *baseURL = [NSURL URLWithString:BaseURLString];
+    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:baseURL];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
     
-    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    operation.responseSerializer = [AFJSONResponseSerializer serializer];
+    User *currentUser = [User currentUser];
+    NSDictionary *params = @{
+                             @"nativeLanguage" : currentUser.nativeLanguage,
+                             @"learningLanguage" : currentUser.learningLanguage,
+                             @"universalLanguage" : currentUser.universalLanguage
+                             };
     
-    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, NSArray *response) {
+    [manager POST:@"allPossibleUser" parameters:params success:^(NSURLSessionDataTask *task, id responseObject)
+    {
         
-        NSLog(@"response %@",response);
-        [self.delegate possibleUserLoaded:response];
+        NSLog(@"response %@",responseObject);
+
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
         
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
         NSLog(@"error %@",error);
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Lotteries loading failed"
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Signing up"
                                                             message:[error localizedDescription]
                                                            delegate:nil
                                                   cancelButtonTitle:@"Ok"
                                                   otherButtonTitles:nil];
         [alertView show];
     }];
-    
-    [operation start];
-
 }
 
 @end

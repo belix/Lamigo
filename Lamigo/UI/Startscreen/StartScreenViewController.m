@@ -9,6 +9,7 @@
 #import "StartScreenViewController.h"
 #import "User.h"
 #import "MatchingClient.h"
+#import "MatchingDetailViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
 @interface StartScreenViewController () <MatchingClientDelegate>
@@ -16,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *profilePicture;
 
 @property (nonatomic, strong) MatchingClient *matchingClient;
+@property (nonatomic, strong) MatchingDetailViewController *matchingDetailViewController;
 
 @end
 
@@ -37,6 +39,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)getNextUser:(id)sender
+{
+    [self.matchingDetailViewController userDeclined];
+}
+
 #pragma mark - MatchingClientDelegate
 
 - (void)possibleUserLoaded:(NSArray *)users
@@ -45,14 +52,17 @@
     self.profilePicture.image = [UIImage imageWithData:imageData];
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"matchingDetailViewController"])
+    {
+        self.matchingDetailViewController = segue.destinationViewController;
+    }
 }
-*/
+
 
 @end

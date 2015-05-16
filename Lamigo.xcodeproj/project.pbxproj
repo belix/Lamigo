@@ -24,6 +24,9 @@
 		0503D2901B03D76C00BC1ACE /* MenuRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0503D28D1B03D76C00BC1ACE /* MenuRootViewController.m */; };
 		0503D2951B03F1AE00BC1ACE /* MatchingClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 0503D2941B03F1AE00BC1ACE /* MatchingClient.m */; };
 		0522A44B1B064A0700BCFA5B /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0522A44A1B064A0700BCFA5B /* RootViewController.m */; };
+		0524A3281B066412002A0497 /* MatchingDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0524A3271B066412002A0497 /* MatchingDetailViewController.m */; };
+		0524A32B1B0669F0002A0497 /* MatchingProfileImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0524A32A1B0669F0002A0497 /* MatchingProfileImageView.m */; };
+		0524A32E1B066A84002A0497 /* CAAnimation+CompletionBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 0524A32D1B066A84002A0497 /* CAAnimation+CompletionBlock.m */; };
 		0538C7A11B05580800D0690E /* RegistrationContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0538C7A01B05580800D0690E /* RegistrationContainerViewController.m */; };
 		0538C7A71B061DBB00D0690E /* RegistrationStepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0538C7A61B061DBB00D0690E /* RegistrationStepViewController.m */; };
 		0538C7AA1B061DE300D0690E /* RegistrationNativeLanguageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0538C7A91B061DE300D0690E /* RegistrationNativeLanguageViewController.m */; };
@@ -31,6 +34,8 @@
 		0538C7B21B06223B00D0690E /* RegistrationUniversalLanguageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0538C7B11B06223B00D0690E /* RegistrationUniversalLanguageViewController.m */; };
 		0538C7B51B062FB400D0690E /* RegistrationStepTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0538C7B41B062FB400D0690E /* RegistrationStepTableViewCell.m */; };
 		0538C7B81B06391D00D0690E /* RegistrationInterestsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0538C7B71B06391D00D0690E /* RegistrationInterestsViewController.m */; };
+		05B909761B06DB4D0002DFD8 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B909751B06DB4D0002DFD8 /* SettingsViewController.m */; };
+		05B909791B06E7820002DFD8 /* SettingsInterestsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B909781B06E7820002DFD8 /* SettingsInterestsTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +81,12 @@
 		0503D2961B03F34700BC1ACE /* MatchingClientDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MatchingClientDelegate.h; path = NetworkLayer/MatchingClientDelegate.h; sourceTree = "<group>"; };
 		0522A4491B064A0700BCFA5B /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		0522A44A1B064A0700BCFA5B /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		0524A3261B066412002A0497 /* MatchingDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MatchingDetailViewController.h; path = UI/Matching/MatchingDetailViewController.h; sourceTree = "<group>"; };
+		0524A3271B066412002A0497 /* MatchingDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MatchingDetailViewController.m; path = UI/Matching/MatchingDetailViewController.m; sourceTree = "<group>"; };
+		0524A3291B0669F0002A0497 /* MatchingProfileImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MatchingProfileImageView.h; path = UI/Matching/MatchingProfileImageView.h; sourceTree = "<group>"; };
+		0524A32A1B0669F0002A0497 /* MatchingProfileImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MatchingProfileImageView.m; path = UI/Matching/MatchingProfileImageView.m; sourceTree = "<group>"; };
+		0524A32C1B066A84002A0497 /* CAAnimation+CompletionBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAAnimation+CompletionBlock.h"; sourceTree = "<group>"; };
+		0524A32D1B066A84002A0497 /* CAAnimation+CompletionBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAAnimation+CompletionBlock.m"; sourceTree = "<group>"; };
 		0538C79F1B05580800D0690E /* RegistrationContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegistrationContainerViewController.h; path = UI/Registration/RegistrationContainerViewController.h; sourceTree = "<group>"; };
 		0538C7A01B05580800D0690E /* RegistrationContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegistrationContainerViewController.m; path = UI/Registration/RegistrationContainerViewController.m; sourceTree = "<group>"; };
 		0538C7A51B061DBB00D0690E /* RegistrationStepViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegistrationStepViewController.h; path = UI/Registration/RegistrationStepViewController.h; sourceTree = "<group>"; };
@@ -90,6 +101,10 @@
 		0538C7B41B062FB400D0690E /* RegistrationStepTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegistrationStepTableViewCell.m; path = UI/Registration/RegistrationStepTableViewCell.m; sourceTree = "<group>"; };
 		0538C7B61B06391D00D0690E /* RegistrationInterestsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegistrationInterestsViewController.h; path = UI/Registration/RegistrationInterestsViewController.h; sourceTree = "<group>"; };
 		0538C7B71B06391D00D0690E /* RegistrationInterestsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegistrationInterestsViewController.m; path = UI/Registration/RegistrationInterestsViewController.m; sourceTree = "<group>"; };
+		05B909741B06DB4D0002DFD8 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewController.h; path = UI/Settings/SettingsViewController.h; sourceTree = "<group>"; };
+		05B909751B06DB4D0002DFD8 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = UI/Settings/SettingsViewController.m; sourceTree = "<group>"; };
+		05B909771B06E7820002DFD8 /* SettingsInterestsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsInterestsTableViewCell.h; path = UI/Settings/SettingsInterestsTableViewCell.h; sourceTree = "<group>"; };
+		05B909781B06E7820002DFD8 /* SettingsInterestsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsInterestsTableViewCell.m; path = UI/Settings/SettingsInterestsTableViewCell.m; sourceTree = "<group>"; };
 		4442248295CA12763B6FB33B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		62ECC23E0C0C26A2CDE6F908 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		BF90CDBEDA21195E072EC47A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,11 +154,11 @@
 			children = (
 				0503D2531B03838300BC1ACE /* AppDelegate.h */,
 				0503D2541B03838300BC1ACE /* AppDelegate.m */,
+				0524A32C1B066A84002A0497 /* CAAnimation+CompletionBlock.h */,
+				0524A32D1B066A84002A0497 /* CAAnimation+CompletionBlock.m */,
 				0503D2911B03D7BD00BC1ACE /* UI */,
 				0503D2781B03C00000BC1ACE /* LoginViewController.h */,
 				0503D2791B03C00000BC1ACE /* LoginViewController.m */,
-				0503D2851B03CC9700BC1ACE /* StartScreenViewController.h */,
-				0503D2861B03CC9700BC1ACE /* StartScreenViewController.m */,
 				0522A4491B064A0700BCFA5B /* RootViewController.h */,
 				0522A44A1B064A0700BCFA5B /* RootViewController.m */,
 				0503D2801B03C77600BC1ACE /* ApplicationLayer */,
@@ -216,7 +231,10 @@
 		0503D2911B03D7BD00BC1ACE /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				0524A3251B0663EC002A0497 /* MatchingScreen */,
+				0524A3241B065BCC002A0497 /* Login */,
 				0538C79E1B0556BF00D0690E /* Registration */,
+				05B909731B06DB350002DFD8 /* Settings */,
 				0503D2921B03D7C200BC1ACE /* MainMenu */,
 			);
 			name = UI;
@@ -233,6 +251,26 @@
 				0503D28D1B03D76C00BC1ACE /* MenuRootViewController.m */,
 			);
 			name = MainMenu;
+			sourceTree = "<group>";
+		};
+		0524A3241B065BCC002A0497 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		0524A3251B0663EC002A0497 /* MatchingScreen */ = {
+			isa = PBXGroup;
+			children = (
+				0503D2851B03CC9700BC1ACE /* StartScreenViewController.h */,
+				0503D2861B03CC9700BC1ACE /* StartScreenViewController.m */,
+				0524A3291B0669F0002A0497 /* MatchingProfileImageView.h */,
+				0524A32A1B0669F0002A0497 /* MatchingProfileImageView.m */,
+				0524A3261B066412002A0497 /* MatchingDetailViewController.h */,
+				0524A3271B066412002A0497 /* MatchingDetailViewController.m */,
+			);
+			name = MatchingScreen;
 			sourceTree = "<group>";
 		};
 		0538C79E1B0556BF00D0690E /* Registration */ = {
@@ -262,6 +300,17 @@
 				0538C7B41B062FB400D0690E /* RegistrationStepTableViewCell.m */,
 			);
 			name = Steps;
+			sourceTree = "<group>";
+		};
+		05B909731B06DB350002DFD8 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				05B909741B06DB4D0002DFD8 /* SettingsViewController.h */,
+				05B909751B06DB4D0002DFD8 /* SettingsViewController.m */,
+				05B909771B06E7820002DFD8 /* SettingsInterestsTableViewCell.h */,
+				05B909781B06E7820002DFD8 /* SettingsInterestsTableViewCell.m */,
+			);
+			name = Settings;
 			sourceTree = "<group>";
 		};
 		4BC01DEC347FC7204E4D1799 /* Pods */ = {
@@ -424,14 +473,19 @@
 				0503D2581B03838300BC1ACE /* Lamigo.xcdatamodeld in Sources */,
 				0503D2901B03D76C00BC1ACE /* MenuRootViewController.m in Sources */,
 				0503D2551B03838300BC1ACE /* AppDelegate.m in Sources */,
+				05B909791B06E7820002DFD8 /* SettingsInterestsTableViewCell.m in Sources */,
 				0538C7A11B05580800D0690E /* RegistrationContainerViewController.m in Sources */,
+				0524A32B1B0669F0002A0497 /* MatchingProfileImageView.m in Sources */,
 				0538C7AA1B061DE300D0690E /* RegistrationNativeLanguageViewController.m in Sources */,
+				05B909761B06DB4D0002DFD8 /* SettingsViewController.m in Sources */,
+				0524A3281B066412002A0497 /* MatchingDetailViewController.m in Sources */,
 				0538C7A71B061DBB00D0690E /* RegistrationStepViewController.m in Sources */,
 				0503D2951B03F1AE00BC1ACE /* MatchingClient.m in Sources */,
 				0503D28E1B03D76C00BC1ACE /* MainMenuViewController.m in Sources */,
 				0503D28F1B03D76C00BC1ACE /* MainMenuTableViewCell.m in Sources */,
 				0503D2521B03838300BC1ACE /* main.m in Sources */,
 				0503D27A1B03C00000BC1ACE /* LoginViewController.m in Sources */,
+				0524A32E1B066A84002A0497 /* CAAnimation+CompletionBlock.m in Sources */,
 				0503D2871B03CC9700BC1ACE /* StartScreenViewController.m in Sources */,
 				0538C7B21B06223B00D0690E /* RegistrationUniversalLanguageViewController.m in Sources */,
 				0538C7B81B06391D00D0690E /* RegistrationInterestsViewController.m in Sources */,

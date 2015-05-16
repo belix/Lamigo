@@ -14,8 +14,8 @@
 #import "RegistrationInterestsViewController.h"
 #import "LoginClient.h"
 
-
 @interface RegistrationContainerViewController () <LoginClientDelegate>
+
 @property (weak, nonatomic) IBOutlet UIView *nativeLanguageContainer;
 @property (weak, nonatomic) IBOutlet UIView *worldLanguageContainer;
 @property (weak, nonatomic) IBOutlet UIView *learningLanguageContainer;

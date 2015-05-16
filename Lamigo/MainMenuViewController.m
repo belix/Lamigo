@@ -85,8 +85,7 @@
             [self.sideMenuViewController hideMenuViewController];
 
         case 2:
-            break;
-            [self.sideMenuViewController setContentViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"partnerNavController"]
+            [self.sideMenuViewController setContentViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"settingsNavController"]
                                                          animated:YES];
             [self.sideMenuViewController hideMenuViewController];
             break;
