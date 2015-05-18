@@ -35,6 +35,15 @@
 		0538C7B51B062FB400D0690E /* RegistrationStepTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0538C7B41B062FB400D0690E /* RegistrationStepTableViewCell.m */; };
 		0538C7B81B06391D00D0690E /* RegistrationInterestsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0538C7B71B06391D00D0690E /* RegistrationInterestsViewController.m */; };
 		0540631C1B077140000230EE /* RegistrationProfilePictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0540631B1B077140000230EE /* RegistrationProfilePictureViewController.m */; };
+		058160A11B0923F7003DC50F /* SettingsLanguageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 058160A01B0923F7003DC50F /* SettingsLanguageViewController.m */; };
+		0583133C1B0A1123003822EE /* ContentProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 0583133B1B0A1123003822EE /* ContentProvider.m */; };
+		0583133E1B0A1C4A003822EE /* FlagImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0583133D1B0A1C4A003822EE /* FlagImages.xcassets */; };
+		058313411B0A1D94003822EE /* SettingsClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 058313401B0A1D94003822EE /* SettingsClient.m */; };
+		058313451B0A59E1003822EE /* FriendsClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 058313441B0A59E1003822EE /* FriendsClient.m */; };
+		058313501B0A5B44003822EE /* ChatsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0583134F1B0A5B44003822EE /* ChatsTableViewController.m */; };
+		058313531B0A5B68003822EE /* ChatTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 058313521B0A5B68003822EE /* ChatTableViewCell.m */; };
+		058313571B0A6BD9003822EE /* DemoModelData.m in Sources */ = {isa = PBXBuildFile; fileRef = 058313561B0A6BD9003822EE /* DemoModelData.m */; };
+		0583135A1B0A6BFA003822EE /* ChatMessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 058313591B0A6BFA003822EE /* ChatMessagesViewController.m */; };
 		05B909761B06DB4D0002DFD8 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B909751B06DB4D0002DFD8 /* SettingsViewController.m */; };
 		05B909791B06E7820002DFD8 /* SettingsInterestsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B909781B06E7820002DFD8 /* SettingsInterestsTableViewCell.m */; };
 /* End PBXBuildFile section */
@@ -105,6 +114,25 @@
 		0540631A1B077140000230EE /* RegistrationProfilePictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegistrationProfilePictureViewController.h; path = UI/Registration/RegistrationProfilePictureViewController.h; sourceTree = "<group>"; };
 		0540631B1B077140000230EE /* RegistrationProfilePictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegistrationProfilePictureViewController.m; path = UI/Registration/RegistrationProfilePictureViewController.m; sourceTree = "<group>"; };
 		0540631D1B07A175000230EE /* FlippingCardDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlippingCardDelegate.h; path = UI/Matching/FlippingCardDelegate.h; sourceTree = "<group>"; };
+		0581609F1B0923F7003DC50F /* SettingsLanguageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsLanguageViewController.h; path = UI/Settings/SettingsLanguageViewController.h; sourceTree = "<group>"; };
+		058160A01B0923F7003DC50F /* SettingsLanguageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsLanguageViewController.m; path = UI/Settings/SettingsLanguageViewController.m; sourceTree = "<group>"; };
+		0583133A1B0A1123003822EE /* ContentProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContentProvider.h; path = AppicationLayer/ContentProvider.h; sourceTree = "<group>"; };
+		0583133B1B0A1123003822EE /* ContentProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContentProvider.m; path = AppicationLayer/ContentProvider.m; sourceTree = "<group>"; };
+		0583133D1B0A1C4A003822EE /* FlagImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = FlagImages.xcassets; sourceTree = "<group>"; };
+		0583133F1B0A1D94003822EE /* SettingsClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsClient.h; path = NetworkLayer/SettingsClient.h; sourceTree = "<group>"; };
+		058313401B0A1D94003822EE /* SettingsClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsClient.m; path = NetworkLayer/SettingsClient.m; sourceTree = "<group>"; };
+		058313421B0A34A5003822EE /* SettingsClientDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsClientDelegate.h; path = NetworkLayer/SettingsClientDelegate.h; sourceTree = "<group>"; };
+		058313431B0A59E1003822EE /* FriendsClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FriendsClient.h; path = NetworkLayer/FriendsClient.h; sourceTree = "<group>"; };
+		058313441B0A59E1003822EE /* FriendsClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FriendsClient.m; path = NetworkLayer/FriendsClient.m; sourceTree = "<group>"; };
+		058313491B0A5A06003822EE /* FriendsClientDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FriendsClientDelegate.h; path = NetworkLayer/FriendsClientDelegate.h; sourceTree = "<group>"; };
+		0583134E1B0A5B44003822EE /* ChatsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChatsTableViewController.h; path = UI/Chats/ChatsTableViewController.h; sourceTree = "<group>"; };
+		0583134F1B0A5B44003822EE /* ChatsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChatsTableViewController.m; path = UI/Chats/ChatsTableViewController.m; sourceTree = "<group>"; };
+		058313511B0A5B68003822EE /* ChatTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChatTableViewCell.h; path = NetworkLayer/ChatTableViewCell.h; sourceTree = "<group>"; };
+		058313521B0A5B68003822EE /* ChatTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChatTableViewCell.m; path = NetworkLayer/ChatTableViewCell.m; sourceTree = "<group>"; };
+		058313551B0A6BD9003822EE /* DemoModelData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoModelData.h; sourceTree = "<group>"; };
+		058313561B0A6BD9003822EE /* DemoModelData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoModelData.m; sourceTree = "<group>"; };
+		058313581B0A6BFA003822EE /* ChatMessagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChatMessagesViewController.h; path = UI/Chats/ChatMessagesViewController.h; sourceTree = "<group>"; };
+		058313591B0A6BFA003822EE /* ChatMessagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChatMessagesViewController.m; path = UI/Chats/ChatMessagesViewController.m; sourceTree = "<group>"; };
 		05B909741B06DB4D0002DFD8 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewController.h; path = UI/Settings/SettingsViewController.h; sourceTree = "<group>"; };
 		05B909751B06DB4D0002DFD8 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = UI/Settings/SettingsViewController.m; sourceTree = "<group>"; };
 		05B909771B06E7820002DFD8 /* SettingsInterestsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsInterestsTableViewCell.h; path = UI/Settings/SettingsInterestsTableViewCell.h; sourceTree = "<group>"; };
@@ -169,6 +197,7 @@
 				0503D27B1B03C73400BC1ACE /* NetworkLayer */,
 				0503D25C1B03838300BC1ACE /* Main.storyboard */,
 				0503D25F1B03838300BC1ACE /* Images.xcassets */,
+				0583133D1B0A1C4A003822EE /* FlagImages.xcassets */,
 				0503D2611B03838300BC1ACE /* LaunchScreen.xib */,
 				0503D2561B03838300BC1ACE /* Lamigo.xcdatamodeld */,
 				0503D24F1B03838300BC1ACE /* Supporting Files */,
@@ -211,6 +240,12 @@
 				0503D2931B03F1AE00BC1ACE /* MatchingClient.h */,
 				0503D2941B03F1AE00BC1ACE /* MatchingClient.m */,
 				0503D2961B03F34700BC1ACE /* MatchingClientDelegate.h */,
+				0583133F1B0A1D94003822EE /* SettingsClient.h */,
+				058313401B0A1D94003822EE /* SettingsClient.m */,
+				058313421B0A34A5003822EE /* SettingsClientDelegate.h */,
+				058313431B0A59E1003822EE /* FriendsClient.h */,
+				058313441B0A59E1003822EE /* FriendsClient.m */,
+				058313491B0A5A06003822EE /* FriendsClientDelegate.h */,
 			);
 			name = NetworkLayer;
 			sourceTree = "<group>";
@@ -228,6 +263,8 @@
 			children = (
 				0503D2821B03C79700BC1ACE /* User.h */,
 				0503D2831B03C79700BC1ACE /* User.m */,
+				0583133A1B0A1123003822EE /* ContentProvider.h */,
+				0583133B1B0A1123003822EE /* ContentProvider.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -235,6 +272,7 @@
 		0503D2911B03D7BD00BC1ACE /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				0583134A1B0A5AEB003822EE /* ChatSelection */,
 				0524A3251B0663EC002A0497 /* MatchingScreen */,
 				0524A3241B065BCC002A0497 /* Login */,
 				0538C79E1B0556BF00D0690E /* Registration */,
@@ -309,11 +347,36 @@
 			name = Steps;
 			sourceTree = "<group>";
 		};
+		0583134A1B0A5AEB003822EE /* ChatSelection */ = {
+			isa = PBXGroup;
+			children = (
+				0583134E1B0A5B44003822EE /* ChatsTableViewController.h */,
+				0583134F1B0A5B44003822EE /* ChatsTableViewController.m */,
+				058313511B0A5B68003822EE /* ChatTableViewCell.h */,
+				058313521B0A5B68003822EE /* ChatTableViewCell.m */,
+				058313541B0A6BA1003822EE /* Chat */,
+			);
+			name = ChatSelection;
+			sourceTree = "<group>";
+		};
+		058313541B0A6BA1003822EE /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				058313551B0A6BD9003822EE /* DemoModelData.h */,
+				058313561B0A6BD9003822EE /* DemoModelData.m */,
+				058313581B0A6BFA003822EE /* ChatMessagesViewController.h */,
+				058313591B0A6BFA003822EE /* ChatMessagesViewController.m */,
+			);
+			name = Chat;
+			sourceTree = "<group>";
+		};
 		05B909731B06DB350002DFD8 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
 				05B909741B06DB4D0002DFD8 /* SettingsViewController.h */,
 				05B909751B06DB4D0002DFD8 /* SettingsViewController.m */,
+				0581609F1B0923F7003DC50F /* SettingsLanguageViewController.h */,
+				058160A01B0923F7003DC50F /* SettingsLanguageViewController.m */,
 				05B909771B06E7820002DFD8 /* SettingsInterestsTableViewCell.h */,
 				05B909781B06E7820002DFD8 /* SettingsInterestsTableViewCell.m */,
 			);
@@ -422,6 +485,7 @@
 				0503D25E1B03838300BC1ACE /* Main.storyboard in Resources */,
 				0503D2631B03838300BC1ACE /* LaunchScreen.xib in Resources */,
 				0503D2601B03838300BC1ACE /* Images.xcassets in Resources */,
+				0583133E1B0A1C4A003822EE /* FlagImages.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +541,7 @@
 				0538C7AD1B061DF500D0690E /* RegistrationLearningLanguageViewController.m in Sources */,
 				0503D27F1B03C74900BC1ACE /* LoginClient.m in Sources */,
 				0503D2841B03C79700BC1ACE /* User.m in Sources */,
+				058313501B0A5B44003822EE /* ChatsTableViewController.m in Sources */,
 				0503D2581B03838300BC1ACE /* Lamigo.xcdatamodeld in Sources */,
 				0503D2901B03D76C00BC1ACE /* MenuRootViewController.m in Sources */,
 				0503D2551B03838300BC1ACE /* AppDelegate.m in Sources */,
@@ -486,17 +551,24 @@
 				0524A32B1B0669F0002A0497 /* MatchingProfileImageView.m in Sources */,
 				0538C7AA1B061DE300D0690E /* RegistrationNativeLanguageViewController.m in Sources */,
 				05B909761B06DB4D0002DFD8 /* SettingsViewController.m in Sources */,
+				058160A11B0923F7003DC50F /* SettingsLanguageViewController.m in Sources */,
+				0583133C1B0A1123003822EE /* ContentProvider.m in Sources */,
 				0524A3281B066412002A0497 /* MatchingDetailViewController.m in Sources */,
+				058313531B0A5B68003822EE /* ChatTableViewCell.m in Sources */,
 				0538C7A71B061DBB00D0690E /* RegistrationStepViewController.m in Sources */,
 				0503D2951B03F1AE00BC1ACE /* MatchingClient.m in Sources */,
 				0503D28E1B03D76C00BC1ACE /* MainMenuViewController.m in Sources */,
 				0503D28F1B03D76C00BC1ACE /* MainMenuTableViewCell.m in Sources */,
 				0503D2521B03838300BC1ACE /* main.m in Sources */,
+				058313451B0A59E1003822EE /* FriendsClient.m in Sources */,
 				0503D27A1B03C00000BC1ACE /* LoginViewController.m in Sources */,
+				0583135A1B0A6BFA003822EE /* ChatMessagesViewController.m in Sources */,
+				058313571B0A6BD9003822EE /* DemoModelData.m in Sources */,
 				0524A32E1B066A84002A0497 /* CAAnimation+CompletionBlock.m in Sources */,
 				0503D2871B03CC9700BC1ACE /* StartScreenViewController.m in Sources */,
 				0538C7B21B06223B00D0690E /* RegistrationUniversalLanguageViewController.m in Sources */,
 				0538C7B81B06391D00D0690E /* RegistrationInterestsViewController.m in Sources */,
+				058313411B0A1D94003822EE /* SettingsClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

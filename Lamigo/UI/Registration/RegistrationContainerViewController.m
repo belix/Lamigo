@@ -89,6 +89,7 @@
         }
     }
     
+//    self.currentUser.interests = @[@1,@2,@4];
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
 

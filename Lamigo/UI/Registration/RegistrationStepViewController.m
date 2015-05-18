@@ -8,6 +8,8 @@
 
 #import "RegistrationStepViewController.h"
 #import "RegistrationStepTableViewCell.h"
+#import "RegistrationInterestsViewController.h"
+#import "ContentProvider.h"
 
 @interface RegistrationStepViewController () <UITableViewDelegate,UITableViewDataSource>
 
@@ -47,8 +49,15 @@
 {
     static NSString *cellIdentifier = @"RegistrationStepTableViewCell";
     RegistrationStepTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    cell.titleLabel.text = self.tableViewModel[indexPath.row];
-    
+
+    if (![self isKindOfClass:[RegistrationInterestsViewController class]])
+    {
+        cell.titleLabel.text = [ContentProvider languageNameForID:self.tableViewModel[indexPath.row]];
+    }
+    else
+    {
+        cell.titleLabel.text = self.tableViewModel[indexPath.row];
+    }
     return cell;
 }
 

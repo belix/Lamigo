@@ -17,6 +17,7 @@
 
 @property (nonatomic, strong) MatchingClient *matchingClient;
 @property (nonatomic, strong) MatchingDetailViewController *matchingDetailViewController;
+@property (weak, nonatomic) IBOutlet UIView *searchingView;
 
 @end
 
@@ -27,7 +28,7 @@
     [super viewDidLoad];
     MatchingClient *matchingClient = [[MatchingClient alloc] init];
     matchingClient.delegate = self;
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+//    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         
         [matchingClient fetchAllPossibleUser];
@@ -50,8 +51,26 @@
 {
     dispatch_async(dispatch_get_main_queue(), ^{
         NSLog(@"users.count %ld",users.count);
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
-        self.matchingDetailViewController.users = users;
+//        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        
+        if (users.count)
+        {
+            self.matchingDetailViewController.users = users;
+            //fade out searching view
+            [UIView animateWithDuration:0.3
+                                  delay:0.0
+                                options: UIViewAnimationOptionCurveEaseInOut
+                             animations:^{
+                                 self.searchingView.alpha = 0;
+                             }
+                             completion:^(BOOL finished){
+                                 self.searchingView.hidden = YES;
+                             }];
+        }
+        else
+        {
+            
+        }
     });
 
 }

@@ -7,6 +7,7 @@
 //
 
 #import "RegistrationLearningLanguageViewController.h"
+#import "ContentProvider.h"
 
 @interface RegistrationLearningLanguageViewController ()
 
@@ -22,7 +23,7 @@
 
 - (void)setupTableViewModel
 {
-    self.tableViewModel = @[@"Deutsch",@"Englisch",@"Französisch",@"Spanisch",@"Japanisch",@"Italienisch", @"Chinesisch",@"Portugiesisch"];
+    self.tableViewModel = [ContentProvider languages];
 }
 
 

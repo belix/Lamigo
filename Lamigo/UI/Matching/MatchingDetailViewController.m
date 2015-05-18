@@ -42,14 +42,13 @@
 
 - (void)updateUI
 {
-    
-    if(_users[self.userIndex])
+    if(_users.count > self.userIndex)
     {
         User *user = _users[self.userIndex];
         self.profilePictureView.frontPicture.image = [UIImage imageWithData:user.profilePicture];
         self.usernameLabel.text = user.username;
     }
-    if(_users[self.userIndex+1])
+    if(_users.count > self.userIndex + 1)
     {
         User *user = _users[self.userIndex+1];
         self.profilePictureView.backPicture.image = [UIImage imageWithData:user.profilePicture];
@@ -60,7 +59,7 @@
 
 - (void)userDeclined
 {
-    [self.profilePictureView flip];
+    [self.profilePictureView userDeclined];
 }
 
 #pragma mark - FlippingCardDelegate

@@ -17,9 +17,9 @@
 @property (nonatomic, strong) NSString *birthday;
 @property (nonatomic) NSInteger gender;
 @property (nonatomic, strong) NSData *profilePicture;
-@property (nonatomic, strong) NSString *nativeLanguage;
-@property (nonatomic, strong) NSString *learningLanguage;
-@property (nonatomic, strong) NSString *universalLanguage;
+@property (nonatomic, strong) NSNumber *nativeLanguage;
+@property (nonatomic, strong) NSNumber *learningLanguage;
+@property (nonatomic, strong) NSNumber *universalLanguage;
 @property (nonatomic, strong) NSString *password;
 @property (nonatomic, strong) NSMutableArray *interests;
 

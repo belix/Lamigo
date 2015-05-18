@@ -7,6 +7,7 @@
 //
 
 #import "RegistrationUniversalLanguageViewController.h"
+#import "ContentProvider.h"
 
 @interface RegistrationUniversalLanguageViewController ()
 
@@ -22,8 +23,7 @@
 
 - (void)setupTableViewModel
 {
-    self.tableViewModel = @[@"Deutsch",@"Englisch",@"Französisch",@"Spanisch",@"Japanisch",@"Italienisch", @"Chinesisch",@"Portugiesisch"];
-}
+    self.tableViewModel = [ContentProvider languages];}
 
 
 - (void)didReceiveMemoryWarning {

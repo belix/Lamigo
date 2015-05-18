@@ -17,9 +17,9 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
-
     self.checkBoxImageView.image = selected ? [UIImage imageNamed:@"checkbox-ticked"] : [UIImage imageNamed:@"checkbox-unticked"];
-
 }
+
+
 
 @end

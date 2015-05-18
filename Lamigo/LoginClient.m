@@ -12,7 +12,6 @@
 
 static NSString * const BaseURLString = @"http://vidiviciserver-dev.elasticbeanstalk.com/";
 
-
 @implementation LoginClient
 
 #pragma mark - Internal
@@ -67,7 +66,8 @@ static NSString * const BaseURLString = @"http://vidiviciserver-dev.elasticbeans
                              @"facebookID" : (user.facebookID ? user.facebookID : @""),
                              @"nativeLanguage" : user.nativeLanguage,
                              @"learningLanguage" : user.learningLanguage,
-                             @"universalLanguage" : user.universalLanguage};
+                             @"universalLanguage" : user.universalLanguage,
+                             @"interests" : user.interests};
     
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:baseURL];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];

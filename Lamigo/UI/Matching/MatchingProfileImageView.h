@@ -17,8 +17,12 @@
 @property (nonatomic, weak) IBOutlet UIImageView *frontPicture;
 @property (nonatomic, weak) IBOutlet UIImageView *backPicture;
 
+@property (nonatomic, weak) IBOutlet UIImageView *frontFeedback;
+@property (nonatomic, weak) IBOutlet UIImageView *backFeedback;
+
 @property (nonatomic, weak) id <FlippingCardDelegate> delegate;
 
-- (void)flip;
+- (void)userDeclined;
+- (void)userAccepted;
 
 @end

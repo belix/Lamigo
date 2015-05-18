@@ -24,8 +24,27 @@
 
 - (void)resetCard
 {
+    self.frontFeedback.hidden = YES;
+    self.backFeedback.hidden = YES;
     [self.front.layer removeAllAnimations];
     [self.back.layer removeAllAnimations];
+}
+
+- (void)userDeclined
+{
+    self.frontFeedback.alpha = 0;
+    self.frontFeedback.hidden = NO;
+    self.frontFeedback.image = [UIImage imageNamed:@"circle-red"];
+    //move new container to center of the screen
+    [UIView animateWithDuration:0.3
+                          delay:0.0
+                        options: UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         self.frontFeedback.alpha = .5f;
+                     }
+                     completion:^(BOOL finished){
+                         [self flip];
+                     }];
 }
 
 - (void)flip

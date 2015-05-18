@@ -79,10 +79,10 @@
             [self.sideMenuViewController hideMenuViewController];
             break;
         case 1:
-            break;
-            [self.sideMenuViewController setContentViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"couponNavController"]
+            [self.sideMenuViewController setContentViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"ChatsNavController"]
                                                          animated:YES];
             [self.sideMenuViewController hideMenuViewController];
+            break;
 
         case 2:
             [self.sideMenuViewController setContentViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"settingsNavController"]

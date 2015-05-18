@@ -29,7 +29,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *selectedValue = self.tableViewModel[indexPath.row];
+    NSNumber *selectedValue = @(indexPath.row+1);
     if(![self.selectedInterests containsObject:selectedValue])
     {
         [self.selectedInterests addObject:selectedValue];
@@ -38,7 +38,7 @@
 
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *selectedValue = self.tableViewModel[indexPath.row];
+    NSNumber *selectedValue = @(indexPath.row+1);
     if([self.selectedInterests containsObject:selectedValue])
     {
         [self.selectedInterests removeObject:selectedValue];
