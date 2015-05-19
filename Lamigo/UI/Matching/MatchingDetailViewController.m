@@ -14,7 +14,6 @@
 
 @property (weak, nonatomic) IBOutlet MatchingProfileImageView *profilePictureView;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
-@property (nonatomic) NSInteger userIndex;
 
 @end
 

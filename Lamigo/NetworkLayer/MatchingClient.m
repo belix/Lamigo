@@ -10,7 +10,7 @@
 #import "AFNetworking.h"
 #import "User.h"
 
-static NSString * const BaseURLString = @"http://vidiviciserver-dev.elasticbeanstalk.com/";
+static NSString * const BaseURLString = @"http://localhost:8888/";
 
 @implementation MatchingClient
 
@@ -22,6 +22,7 @@ static NSString * const BaseURLString = @"http://vidiviciserver-dev.elasticbeans
     
     User *currentUser = [User currentUser];
     NSDictionary *params = @{
+                             @"user_id" : currentUser.ID,
                              @"nativeLanguage" : currentUser.nativeLanguage,
                              @"learningLanguage" : currentUser.learningLanguage,
                              @"universalLanguage" : currentUser.universalLanguage
@@ -29,6 +30,7 @@ static NSString * const BaseURLString = @"http://vidiviciserver-dev.elasticbeans
     
     [manager POST:@"allPossibleUser" parameters:params success:^(NSURLSessionDataTask *task, id responseObject)
     {
+        NSLog(@"response %@",responseObject);
         NSMutableArray *users = [[NSMutableArray alloc] init];
         for(NSDictionary *userDict in responseObject)
         {
@@ -46,15 +48,52 @@ static NSString * const BaseURLString = @"http://vidiviciserver-dev.elasticbeans
 
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         
-        
         NSLog(@"error %@",error);
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Signing up"
-                                                            message:[error localizedDescription]
-                                                           delegate:nil
-                                                  cancelButtonTitle:@"Ok"
-                                                  otherButtonTitles:nil];
-        [alertView show];
     }];
+}
+
+- (void)declineUser:(User *)user
+{
+    NSURL *baseURL = [NSURL URLWithString:BaseURLString];
+    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:baseURL];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    User *currentUser = [User currentUser];
+    NSDictionary *params = @{
+                             @"user_id" : currentUser.ID,
+                             @"friend_id" : user.ID,
+                             };
+    
+    [manager POST:@"declineUser" parameters:params success:^(NSURLSessionDataTask *task, id responseObject)
+     {
+         NSLog(@"response %@",responseObject[@"response"]);
+         
+     } failure:^(NSURLSessionDataTask *task, NSError *error) {
+         
+         NSLog(@"error %@",error);
+     }];
+}
+
+- (void)acceptUser:(User *)user
+{
+    NSURL *baseURL = [NSURL URLWithString:BaseURLString];
+    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:baseURL];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    User *currentUser = [User currentUser];
+    NSDictionary *params = @{
+                             @"user_id" : currentUser.ID,
+                             @"friend_id" : user.ID,
+                             };
+    
+    [manager POST:@"acceptUser" parameters:params success:^(NSURLSessionDataTask *task, id responseObject)
+     {
+         NSLog(@"response %@",responseObject[@"response"]);
+         
+     } failure:^(NSURLSessionDataTask *task, NSError *error) {
+         
+         NSLog(@"error %@",error);
+     }];
 }
 
 @end

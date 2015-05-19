@@ -11,7 +11,7 @@
 
 @interface MatchingDetailViewController : UIViewController
 
-
+@property (nonatomic) NSInteger userIndex;
 @property (nonatomic, strong) NSArray *users;
 
 - (void)userDeclined;

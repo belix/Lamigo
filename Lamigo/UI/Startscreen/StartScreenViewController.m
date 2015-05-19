@@ -18,6 +18,7 @@
 @property (nonatomic, strong) MatchingClient *matchingClient;
 @property (nonatomic, strong) MatchingDetailViewController *matchingDetailViewController;
 @property (weak, nonatomic) IBOutlet UIView *searchingView;
+@property (nonatomic, strong) NSArray *users;
 
 @end
 
@@ -26,12 +27,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    MatchingClient *matchingClient = [[MatchingClient alloc] init];
-    matchingClient.delegate = self;
+    self.matchingClient = [[MatchingClient alloc] init];
+    self.matchingClient.delegate = self;
 //    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         
-        [matchingClient fetchAllPossibleUser];
+        [self.matchingClient fetchAllPossibleUser];
     });
 }
 
@@ -40,9 +41,18 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)getNextUser:(id)sender
+- (IBAction)userDeclinedButtonPressed:(id)sender
 {
+    User *user = self.users[self.matchingDetailViewController.userIndex];
+    [self.matchingClient declineUser:user];
+    
     [self.matchingDetailViewController userDeclined];
+}
+
+- (IBAction)userAcceptedButtonPressed:(id)sender
+{
+    User *user = self.users[self.matchingDetailViewController.userIndex];
+    [self.matchingClient acceptUser:user];
 }
 
 #pragma mark - MatchingClientDelegate
@@ -53,8 +63,9 @@
         NSLog(@"users.count %ld",users.count);
 //        [MBProgressHUD hideHUDForView:self.view animated:YES];
         
-        if (users.count)
+        if (users.count > 0)
         {
+            self.users = users;
             self.matchingDetailViewController.users = users;
             //fade out searching view
             [UIView animateWithDuration:0.3

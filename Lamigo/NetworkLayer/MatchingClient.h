@@ -8,10 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "MatchingClientDelegate.h"
+#import "User.h"
 
 @interface MatchingClient : NSObject
 
 - (void)fetchAllPossibleUser;
+- (void)acceptUser:(User *)user;
+- (void)declineUser:(User *)user;
 
 @property (nonatomic, weak) id <MatchingClientDelegate> delegate;
 
