@@ -13,7 +13,7 @@
 @interface MatchingClient : NSObject
 
 - (void)fetchAllPossibleUser;
-- (void)acceptUser:(User *)user;
+- (void)acceptUser:(User *)user completion:(void (^)(BOOL success, User *user))completion;
 - (void)declineUser:(User *)user;
 
 @property (nonatomic, weak) id <MatchingClientDelegate> delegate;

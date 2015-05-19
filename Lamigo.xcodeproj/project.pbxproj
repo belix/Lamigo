@@ -23,6 +23,7 @@
 		0503D28F1B03D76C00BC1ACE /* MainMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0503D28B1B03D76C00BC1ACE /* MainMenuTableViewCell.m */; };
 		0503D2901B03D76C00BC1ACE /* MenuRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0503D28D1B03D76C00BC1ACE /* MenuRootViewController.m */; };
 		0503D2951B03F1AE00BC1ACE /* MatchingClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 0503D2941B03F1AE00BC1ACE /* MatchingClient.m */; };
+		050978E51B0B78A3000423E4 /* SuccessfulMatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 050978E41B0B78A3000423E4 /* SuccessfulMatchViewController.m */; };
 		0522A44B1B064A0700BCFA5B /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0522A44A1B064A0700BCFA5B /* RootViewController.m */; };
 		0524A3281B066412002A0497 /* MatchingDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0524A3271B066412002A0497 /* MatchingDetailViewController.m */; };
 		0524A32B1B0669F0002A0497 /* MatchingProfileImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0524A32A1B0669F0002A0497 /* MatchingProfileImageView.m */; };
@@ -89,6 +90,9 @@
 		0503D2931B03F1AE00BC1ACE /* MatchingClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MatchingClient.h; path = NetworkLayer/MatchingClient.h; sourceTree = "<group>"; };
 		0503D2941B03F1AE00BC1ACE /* MatchingClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MatchingClient.m; path = NetworkLayer/MatchingClient.m; sourceTree = "<group>"; };
 		0503D2961B03F34700BC1ACE /* MatchingClientDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MatchingClientDelegate.h; path = NetworkLayer/MatchingClientDelegate.h; sourceTree = "<group>"; };
+		050978E11B0B7544000423E4 /* MatchingDetailDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MatchingDetailDelegate.h; path = UI/Matching/MatchingDetailDelegate.h; sourceTree = "<group>"; };
+		050978E31B0B78A3000423E4 /* SuccessfulMatchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SuccessfulMatchViewController.h; path = UI/Matching/SuccessfulMatchViewController.h; sourceTree = "<group>"; };
+		050978E41B0B78A3000423E4 /* SuccessfulMatchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SuccessfulMatchViewController.m; path = UI/Matching/SuccessfulMatchViewController.m; sourceTree = "<group>"; };
 		0522A4491B064A0700BCFA5B /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		0522A44A1B064A0700BCFA5B /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		0524A3261B066412002A0497 /* MatchingDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MatchingDetailViewController.h; path = UI/Matching/MatchingDetailViewController.h; sourceTree = "<group>"; };
@@ -295,6 +299,16 @@
 			name = MainMenu;
 			sourceTree = "<group>";
 		};
+		050978E21B0B754C000423E4 /* FlippingCard */ = {
+			isa = PBXGroup;
+			children = (
+				0524A3291B0669F0002A0497 /* MatchingProfileImageView.h */,
+				0524A32A1B0669F0002A0497 /* MatchingProfileImageView.m */,
+				0540631D1B07A175000230EE /* FlippingCardDelegate.h */,
+			);
+			name = FlippingCard;
+			sourceTree = "<group>";
+		};
 		0524A3241B065BCC002A0497 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -305,13 +319,14 @@
 		0524A3251B0663EC002A0497 /* MatchingScreen */ = {
 			isa = PBXGroup;
 			children = (
+				050978E21B0B754C000423E4 /* FlippingCard */,
 				0503D2851B03CC9700BC1ACE /* StartScreenViewController.h */,
 				0503D2861B03CC9700BC1ACE /* StartScreenViewController.m */,
-				0524A3291B0669F0002A0497 /* MatchingProfileImageView.h */,
-				0524A32A1B0669F0002A0497 /* MatchingProfileImageView.m */,
-				0540631D1B07A175000230EE /* FlippingCardDelegate.h */,
 				0524A3261B066412002A0497 /* MatchingDetailViewController.h */,
 				0524A3271B066412002A0497 /* MatchingDetailViewController.m */,
+				050978E11B0B7544000423E4 /* MatchingDetailDelegate.h */,
+				050978E31B0B78A3000423E4 /* SuccessfulMatchViewController.h */,
+				050978E41B0B78A3000423E4 /* SuccessfulMatchViewController.m */,
 			);
 			name = MatchingScreen;
 			sourceTree = "<group>";
@@ -550,6 +565,7 @@
 				0540631C1B077140000230EE /* RegistrationProfilePictureViewController.m in Sources */,
 				0524A32B1B0669F0002A0497 /* MatchingProfileImageView.m in Sources */,
 				0538C7AA1B061DE300D0690E /* RegistrationNativeLanguageViewController.m in Sources */,
+				050978E51B0B78A3000423E4 /* SuccessfulMatchViewController.m in Sources */,
 				05B909761B06DB4D0002DFD8 /* SettingsViewController.m in Sources */,
 				058160A11B0923F7003DC50F /* SettingsLanguageViewController.m in Sources */,
 				0583133C1B0A1123003822EE /* ContentProvider.m in Sources */,

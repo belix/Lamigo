@@ -10,7 +10,7 @@
 #import "AFNetworking.h"
 #import "User.h"
 
-static NSString * const BaseURLString = @"http://localhost:8888/";
+static NSString * const BaseURLString =@"http://vidiviciserver-dev.elasticbeanstalk.com/";
 
 @implementation MatchingClient
 
@@ -68,13 +68,14 @@ static NSString * const BaseURLString = @"http://localhost:8888/";
      {
          NSLog(@"response %@",responseObject[@"response"]);
          
+         
      } failure:^(NSURLSessionDataTask *task, NSError *error) {
          
          NSLog(@"error %@",error);
      }];
 }
 
-- (void)acceptUser:(User *)user
+- (void)acceptUser:(User *)user completion:(void (^)(BOOL success, User *))completion
 {
     NSURL *baseURL = [NSURL URLWithString:BaseURLString];
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:baseURL];
@@ -89,6 +90,10 @@ static NSString * const BaseURLString = @"http://localhost:8888/";
     [manager POST:@"acceptUser" parameters:params success:^(NSURLSessionDataTask *task, id responseObject)
      {
          NSLog(@"response %@",responseObject[@"response"]);
+         if ([responseObject[@"response"] isEqualToString:@"match"])
+         {
+             completion(YES, user);
+         }
          
      } failure:^(NSURLSessionDataTask *task, NSError *error) {
          

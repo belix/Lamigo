@@ -19,16 +19,13 @@
 
 @implementation MatchingDetailViewController
 
+#pragma mark - Lifecycle
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.profilePictureView.delegate = self;
     self.userIndex = 0;
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
 }
 
 #pragma mark - Setter
@@ -38,6 +35,8 @@
     _users = users;
     [self updateUI];
 }
+
+#pragma mark - Internal
 
 - (void)updateUI
 {
@@ -56,9 +55,16 @@
     self.profilePictureView.back.hidden = YES;
 }
 
+#pragma mark - Public
+
 - (void)userDeclined
 {
     [self.profilePictureView userDeclined];
+}
+
+- (void)userAccepted
+{
+    [self.profilePictureView userAccepted];
 }
 
 #pragma mark - FlippingCardDelegate
@@ -68,6 +74,7 @@
     self.userIndex++;
     if (self.userIndex >= self.users.count - 1)
     {
+        [self.delegate noMoreUsers];
         NSLog(@"no more matches");
     }
     else
@@ -75,15 +82,5 @@
         [self updateUI];
     }
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

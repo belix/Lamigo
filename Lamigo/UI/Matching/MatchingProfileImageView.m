@@ -12,6 +12,8 @@
 
 @implementation MatchingProfileImageView
 
+#pragma mark - Lifecycle
+
 - (void)awakeFromNib
 {
     [super awakeFromNib];
@@ -22,19 +24,26 @@
     self.backPicture.clipsToBounds = YES;
 }
 
-- (void)resetCard
-{
-    self.frontFeedback.hidden = YES;
-    self.backFeedback.hidden = YES;
-    [self.front.layer removeAllAnimations];
-    [self.back.layer removeAllAnimations];
-}
+#pragma mark - Public
 
 - (void)userDeclined
 {
+    self.frontFeedback.image = [UIImage imageNamed:@"circle-red"];
+    [self animateFeedbackView];
+}
+
+- (void)userAccepted
+{
+    self.frontFeedback.image = [UIImage imageNamed:@"circle-blue"];
+    [self animateFeedbackView];
+}
+
+#pragma mark - Internal
+
+- (void)animateFeedbackView
+{
     self.frontFeedback.alpha = 0;
     self.frontFeedback.hidden = NO;
-    self.frontFeedback.image = [UIImage imageNamed:@"circle-red"];
     //move new container to center of the screen
     [UIView animateWithDuration:0.3
                           delay:0.0
@@ -45,6 +54,14 @@
                      completion:^(BOOL finished){
                          [self flip];
                      }];
+}
+
+- (void)resetCard
+{
+    self.frontFeedback.hidden = YES;
+    self.backFeedback.hidden = YES;
+    [self.front.layer removeAllAnimations];
+    [self.back.layer removeAllAnimations];
 }
 
 - (void)flip

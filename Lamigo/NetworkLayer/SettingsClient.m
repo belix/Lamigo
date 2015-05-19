@@ -10,7 +10,7 @@
 #import "AFNetworking.h"
 #import "User.h"
 
-static NSString * const BaseURLString = @"http://localhost:8888/";
+static NSString * const BaseURLString =@"http://vidiviciserver-dev.elasticbeanstalk.com/";
 
 @implementation SettingsClient
 

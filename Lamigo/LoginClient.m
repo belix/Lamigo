@@ -20,8 +20,6 @@ static NSString * const BaseURLString = @"http://vidiviciserver-dev.elasticbeans
 
 - (void)loginWithFacebook:(NSString *)facebookID
 {
-
-    
     NSURL *baseURL = [NSURL URLWithString:BaseURLString];
     NSDictionary *params = @{
                              @"facebookID" : facebookID};
