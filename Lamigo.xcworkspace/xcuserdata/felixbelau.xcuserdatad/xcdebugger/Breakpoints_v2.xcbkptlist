@@ -35,22 +35,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Lamigo/NetworkLayer/MatchingClient.m"
-            timestampString = "453734344.292933"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "-fetchAllPossibleUser"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Lamigo/LoginClient.m"
             timestampString = "453746294.787083"
             startingColumnNumber = "9223372036854775807"
@@ -84,27 +68,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Lamigo/UI/Matching/MatchingDetailViewController.m"
-            timestampString = "453736117.071122"
+            timestampString = "453759118.058574"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
-            landmarkName = "-cardFlippingFinished"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Lamigo/UI/Matching/MatchingDetailViewController.m"
-            timestampString = "453736117.071122"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "180"
+            endingLineNumber = "180"
             landmarkName = "-cardFlippingFinished"
             landmarkType = "5">
          </BreakpointContent>
@@ -132,11 +100,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Lamigo/NetworkLayer/FriendsClient.m"
-            timestampString = "453664086.964663"
+            timestampString = "453753022.575445"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
             landmarkName = "-loadFriends"
             landmarkType = "5">
          </BreakpointContent>
@@ -164,11 +132,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Lamigo/UI/Startscreen/StartScreenViewController.m"
-            timestampString = "453739161.969539"
+            timestampString = "453813949.631377"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "-userAcceptedButtonPressed:"
             landmarkType = "5">
          </BreakpointContent>
@@ -180,11 +148,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Lamigo/NetworkLayer/MatchingClient.m"
-            timestampString = "453739161.969539"
+            timestampString = "453815615.711702"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
             landmarkName = "-acceptUser:completion:"
             landmarkType = "5">
          </BreakpointContent>
@@ -192,7 +160,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Lamigo/NetworkLayer/MatchingClient.m"
@@ -208,15 +176,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Lamigo/NetworkLayer/MatchingClient.m"
-            timestampString = "453735034.671295"
+            timestampString = "453815615.711702"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "-fetchAllPossibleUser"
             landmarkType = "5">
          </BreakpointContent>
@@ -228,11 +196,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Lamigo/UI/Startscreen/StartScreenViewController.m"
-            timestampString = "453739295.506717"
+            timestampString = "453813949.631377"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
             landmarkName = "-userAcceptedButtonPressed:"
             landmarkType = "5">
             <Locations>
@@ -243,12 +211,12 @@
                   symbolName = "-[StartScreenViewController userAcceptedButtonPressed:]"
                   moduleName = "Lamigo"
                   urlString = "file:///Users/felixbelau/CloudStation/Developer/iOS/Lamigo/Lamigo/UI/Startscreen/StartScreenViewController.m"
-                  timestampString = "453746362.144534"
+                  timestampString = "453815747.941324"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "55"
-                  endingLineNumber = "55"
-                  offsetFromSymbolStart = "216">
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "184">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -257,12 +225,12 @@
                   symbolName = "__55-[StartScreenViewController userAcceptedButtonPressed:]_block_invoke"
                   moduleName = "Lamigo"
                   urlString = "file:///Users/felixbelau/CloudStation/Developer/iOS/Lamigo/Lamigo/UI/Startscreen/StartScreenViewController.m"
-                  timestampString = "453746362.144671"
+                  timestampString = "453815747.941569"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "55"
-                  endingLineNumber = "55"
-                  offsetFromSymbolStart = "52">
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "47">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -289,12 +257,12 @@
                   symbolName = "__33-[LoginClient loginWithFacebook:]_block_invoke"
                   moduleName = "Lamigo"
                   urlString = "file:///Users/felixbelau/CloudStation/Developer/iOS/Lamigo/Lamigo/LoginClient.m"
-                  timestampString = "453746362.146201"
+                  timestampString = "453815747.943909"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "48"
                   endingLineNumber = "48"
-                  offsetFromSymbolStart = "1232">
+                  offsetFromSymbolStart = "1149">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -303,12 +271,12 @@
                   symbolName = "__33-[LoginClient loginWithFacebook:]_block_invoke"
                   moduleName = "Lamigo"
                   urlString = "file:///Users/felixbelau/CloudStation/Developer/iOS/Lamigo/Lamigo/LoginClient.m"
-                  timestampString = "453746362.14669"
+                  timestampString = "453815747.944209"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "48"
                   endingLineNumber = "48"
-                  offsetFromSymbolStart = "1264">
+                  offsetFromSymbolStart = "1193">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -317,14 +285,46 @@
                   symbolName = "__33-[LoginClient loginWithFacebook:]_block_invoke76"
                   moduleName = "Lamigo"
                   urlString = "file:///Users/felixbelau/CloudStation/Developer/iOS/Lamigo/Lamigo/LoginClient.m"
-                  timestampString = "453746362.147054"
+                  timestampString = "453815747.94448"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "48"
                   endingLineNumber = "48"
-                  offsetFromSymbolStart = "76">
+                  offsetFromSymbolStart = "67">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Lamigo/UI/Matching/MatchingDetailViewController.m"
+            timestampString = "453758728.557495"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "-viewDidLoad"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Lamigo/NetworkLayer/MatchingClient.m"
+            timestampString = "453815581.654136"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "-fetchAllPossibleUser"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

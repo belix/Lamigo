@@ -24,5 +24,6 @@
 
 - (void)userDeclined;
 - (void)userAccepted;
+- (void)setupProfilePictureLayout;
 
 @end

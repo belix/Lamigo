@@ -10,6 +10,6 @@
 
 @interface RegistrationLearningLanguageViewController : RegistrationStepViewController
 
-@property (nonatomic, strong) NSString *selectedLearningLanguage;
+@property (nonatomic, strong) NSNumber *selectedLearningLanguage;
 
 @end

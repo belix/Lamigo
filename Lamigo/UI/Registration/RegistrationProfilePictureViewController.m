@@ -20,6 +20,10 @@
 {
     [super viewDidLoad];
     self.profilePictureImageView.image = self.profileImage;
+    if (!self.profileImage)
+    {
+        self.profileImage = [UIImage imageNamed:@"demo_avatar_jobs"];
+    }
     self.profilePictureImageView.layer.cornerRadius = self.profilePictureImageView.frame.size.width/2;
     self.profilePictureImageView.clipsToBounds = YES;
     self.descriptionText = @"set profile picture";

@@ -12,15 +12,21 @@
 #import "MatchingDetailViewController.h"
 #import "MBProgressHUD.h"
 #import "SuccessfulMatchViewController.h"
+#import "MRActivityIndicatorView.h"
 #import <QuartzCore/QuartzCore.h>
 
 @interface StartScreenViewController () <MatchingClientDelegate,MatchingDetailDelegate>
 
-@property (nonatomic, strong) MatchingClient *matchingClient;
-@property (nonatomic, strong) MatchingDetailViewController *matchingDetailViewController;
+@property (weak, nonatomic) IBOutlet UIView *matchingDetailContainer;
 @property (weak, nonatomic) IBOutlet UIView *searchingView;
+@property (weak, nonatomic) IBOutlet MRActivityIndicatorView *activityIndicatorView;
+
+@property (nonatomic, strong) MatchingDetailViewController *matchingDetailViewController;
+
 @property (nonatomic, strong) NSArray *users;
 @property (nonatomic, strong) User *matchedUser;
+@property (nonatomic, strong) MatchingClient *matchingClient;
+
 
 @end
 
@@ -31,8 +37,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title = @"Lamigoo";
+    self.matchingDetailContainer.alpha = 0;
     self.matchingClient = [[MatchingClient alloc] init];
     self.matchingClient.delegate = self;
+    [self.activityIndicatorView startAnimating];
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         
         [self.matchingClient fetchAllPossibleUser];
@@ -74,12 +83,14 @@
         {
             self.users = users;
             self.matchingDetailViewController.users = users;
+            [self.activityIndicatorView stopAnimating];
             //fade out searching view
             [UIView animateWithDuration:0.3
                                   delay:0.0
                                 options: UIViewAnimationOptionCurveEaseInOut
                              animations:^{
                                  self.searchingView.alpha = 0;
+                                 self.matchingDetailContainer.alpha = 1;
                              }
                              completion:^(BOOL finished){
                                  self.searchingView.hidden = YES;
@@ -99,9 +110,10 @@
                         options: UIViewAnimationOptionCurveEaseInOut
                      animations:^{
                          self.searchingView.alpha = 1;
+                         self.matchingDetailContainer.alpha = 0;
                      }
                      completion:^(BOOL finished){
-
+                         [self.activityIndicatorView startAnimating];
                      }];
 }
 

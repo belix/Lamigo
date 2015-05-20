@@ -36,6 +36,7 @@
 		0538C7B51B062FB400D0690E /* RegistrationStepTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0538C7B41B062FB400D0690E /* RegistrationStepTableViewCell.m */; };
 		0538C7B81B06391D00D0690E /* RegistrationInterestsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0538C7B71B06391D00D0690E /* RegistrationInterestsViewController.m */; };
 		0540631C1B077140000230EE /* RegistrationProfilePictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0540631B1B077140000230EE /* RegistrationProfilePictureViewController.m */; };
+		05724E0D1B0BC78300EAD7E4 /* InterestsImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05724E0C1B0BC78300EAD7E4 /* InterestsImages.xcassets */; };
 		058160A11B0923F7003DC50F /* SettingsLanguageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 058160A01B0923F7003DC50F /* SettingsLanguageViewController.m */; };
 		0583133C1B0A1123003822EE /* ContentProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 0583133B1B0A1123003822EE /* ContentProvider.m */; };
 		0583133E1B0A1C4A003822EE /* FlagImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0583133D1B0A1C4A003822EE /* FlagImages.xcassets */; };
@@ -118,6 +119,7 @@
 		0540631A1B077140000230EE /* RegistrationProfilePictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegistrationProfilePictureViewController.h; path = UI/Registration/RegistrationProfilePictureViewController.h; sourceTree = "<group>"; };
 		0540631B1B077140000230EE /* RegistrationProfilePictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegistrationProfilePictureViewController.m; path = UI/Registration/RegistrationProfilePictureViewController.m; sourceTree = "<group>"; };
 		0540631D1B07A175000230EE /* FlippingCardDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlippingCardDelegate.h; path = UI/Matching/FlippingCardDelegate.h; sourceTree = "<group>"; };
+		05724E0C1B0BC78300EAD7E4 /* InterestsImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = InterestsImages.xcassets; sourceTree = "<group>"; };
 		0581609F1B0923F7003DC50F /* SettingsLanguageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsLanguageViewController.h; path = UI/Settings/SettingsLanguageViewController.h; sourceTree = "<group>"; };
 		058160A01B0923F7003DC50F /* SettingsLanguageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsLanguageViewController.m; path = UI/Settings/SettingsLanguageViewController.m; sourceTree = "<group>"; };
 		0583133A1B0A1123003822EE /* ContentProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContentProvider.h; path = AppicationLayer/ContentProvider.h; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				0503D25C1B03838300BC1ACE /* Main.storyboard */,
 				0503D25F1B03838300BC1ACE /* Images.xcassets */,
 				0583133D1B0A1C4A003822EE /* FlagImages.xcassets */,
+				05724E0C1B0BC78300EAD7E4 /* InterestsImages.xcassets */,
 				0503D2611B03838300BC1ACE /* LaunchScreen.xib */,
 				0503D2561B03838300BC1ACE /* Lamigo.xcdatamodeld */,
 				0503D24F1B03838300BC1ACE /* Supporting Files */,
@@ -499,6 +502,7 @@
 			files = (
 				0503D25E1B03838300BC1ACE /* Main.storyboard in Resources */,
 				0503D2631B03838300BC1ACE /* LaunchScreen.xib in Resources */,
+				05724E0D1B0BC78300EAD7E4 /* InterestsImages.xcassets in Resources */,
 				0503D2601B03838300BC1ACE /* Images.xcassets in Resources */,
 				0583133E1B0A1C4A003822EE /* FlagImages.xcassets in Resources */,
 			);

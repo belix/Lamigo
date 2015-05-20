@@ -17,7 +17,10 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
-    
+}
+
+- (void)setupProfilePictureLayout
+{
     self.frontPicture.layer.cornerRadius = self.frontPicture.frame.size.width/2;
     self.frontPicture.clipsToBounds = YES;
     self.backPicture.layer.cornerRadius = self.backPicture.frame.size.width/2;

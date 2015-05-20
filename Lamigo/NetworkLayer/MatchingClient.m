@@ -40,7 +40,14 @@ static NSString * const BaseURLString =@"http://vidiviciserver-dev.elasticbeanst
             user.learningLanguage = userDict[@"learningLanguage"];
             user.nativeLanguage = userDict[@"nativeLanguage"];
             user.universalLanguage = userDict[@"universalLanguage"];
-            user.profilePicture = [[NSData alloc] initWithBase64EncodedString:userDict[@"profilePicture"] options:0];
+            if(userDict[@"profilePicture"] != nil && ![userDict[@"profilePicture"] isKindOfClass: [NSNull class]])
+            {
+                user.profilePicture = [[NSData alloc] initWithBase64EncodedString:userDict[@"profilePicture"] options:0];
+            }
+            else
+            {
+                user.profilePicture = UIImagePNGRepresentation([UIImage imageNamed:@"avatar-male"]);
+            }
             [users addObject:user];
         }
         
@@ -54,6 +61,7 @@ static NSString * const BaseURLString =@"http://vidiviciserver-dev.elasticbeanst
 
 - (void)declineUser:(User *)user
 {
+    return;
     NSURL *baseURL = [NSURL URLWithString:BaseURLString];
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:baseURL];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
