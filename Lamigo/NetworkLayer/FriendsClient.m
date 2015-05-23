@@ -27,7 +27,6 @@ static NSString * const BaseURLString =@"http://vidiviciserver-dev.elasticbeanst
     
     [manager POST:@"getAllMatches" parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
         
-        NSLog(@"response %@",responseObject);
         NSMutableArray *users = [[NSMutableArray alloc] init];
         for(NSDictionary *userDict in responseObject)
         {

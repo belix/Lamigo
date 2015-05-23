@@ -30,7 +30,6 @@ static NSString * const BaseURLString =@"http://vidiviciserver-dev.elasticbeanst
     
     [manager POST:@"allPossibleUser" parameters:params success:^(NSURLSessionDataTask *task, id responseObject)
     {
-        NSLog(@"response %@",responseObject);
         NSMutableArray *users = [[NSMutableArray alloc] init];
         for(NSDictionary *userDict in responseObject)
         {
@@ -74,7 +73,6 @@ static NSString * const BaseURLString =@"http://vidiviciserver-dev.elasticbeanst
     
     [manager POST:@"declineUser" parameters:params success:^(NSURLSessionDataTask *task, id responseObject)
      {
-         NSLog(@"response %@",responseObject[@"response"]);
          
          
      } failure:^(NSURLSessionDataTask *task, NSError *error) {

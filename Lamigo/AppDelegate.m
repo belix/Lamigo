@@ -10,7 +10,7 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 
-#import "MatchingClient.h"
+#import "ChatClient.h"
 
 @interface AppDelegate ()
 
@@ -21,10 +21,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:60/255.0f green:84/255.0f blue:158/255.0f alpha:1]];
-    
-//    self.navigationController.navigationBar.barTintColor = [UIColor redColor];
-//    self.navigationController.navigationBar.translucent = NO;
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:75/255.0f green:115/255.0f blue:187/255.0f alpha:1]];
     [[UINavigationBar appearance] setTranslucent:NO];
     [[UINavigationBar appearance] setTitleTextAttributes:@{
                                                            NSForegroundColorAttributeName : [UIColor whiteColor],
@@ -41,7 +38,7 @@
      forState:UIControlStateNormal];
     
     [FBSDKLoginButton class];
-
+    
 //    [[[MatchingClient alloc] init] fetchAllPossibleUser];
     
     return [[FBSDKApplicationDelegate sharedInstance] application:application

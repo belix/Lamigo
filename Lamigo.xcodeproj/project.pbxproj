@@ -48,6 +48,7 @@
 		0583135A1B0A6BFA003822EE /* ChatMessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 058313591B0A6BFA003822EE /* ChatMessagesViewController.m */; };
 		05B909761B06DB4D0002DFD8 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B909751B06DB4D0002DFD8 /* SettingsViewController.m */; };
 		05B909791B06E7820002DFD8 /* SettingsInterestsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B909781B06E7820002DFD8 /* SettingsInterestsTableViewCell.m */; };
+		05ECA5261B0FDE0E00BC5A7C /* ChatClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 05ECA5251B0FDE0E00BC5A7C /* ChatClient.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +144,9 @@
 		05B909751B06DB4D0002DFD8 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = UI/Settings/SettingsViewController.m; sourceTree = "<group>"; };
 		05B909771B06E7820002DFD8 /* SettingsInterestsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsInterestsTableViewCell.h; path = UI/Settings/SettingsInterestsTableViewCell.h; sourceTree = "<group>"; };
 		05B909781B06E7820002DFD8 /* SettingsInterestsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsInterestsTableViewCell.m; path = UI/Settings/SettingsInterestsTableViewCell.m; sourceTree = "<group>"; };
+		05ECA5241B0FDE0E00BC5A7C /* ChatClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChatClient.h; path = NetworkLayer/ChatClient.h; sourceTree = "<group>"; };
+		05ECA5251B0FDE0E00BC5A7C /* ChatClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChatClient.m; path = NetworkLayer/ChatClient.m; sourceTree = "<group>"; };
+		05ECA5271B0FDE2F00BC5A7C /* ChatClientDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChatClientDelegate.h; path = NetworkLayer/ChatClientDelegate.h; sourceTree = "<group>"; };
 		4442248295CA12763B6FB33B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		62ECC23E0C0C26A2CDE6F908 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		BF90CDBEDA21195E072EC47A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -253,6 +257,9 @@
 				058313431B0A59E1003822EE /* FriendsClient.h */,
 				058313441B0A59E1003822EE /* FriendsClient.m */,
 				058313491B0A5A06003822EE /* FriendsClientDelegate.h */,
+				05ECA5241B0FDE0E00BC5A7C /* ChatClient.h */,
+				05ECA5251B0FDE0E00BC5A7C /* ChatClient.m */,
+				05ECA5271B0FDE2F00BC5A7C /* ChatClientDelegate.h */,
 			);
 			name = NetworkLayer;
 			sourceTree = "<group>";
@@ -580,6 +587,7 @@
 				0503D28E1B03D76C00BC1ACE /* MainMenuViewController.m in Sources */,
 				0503D28F1B03D76C00BC1ACE /* MainMenuTableViewCell.m in Sources */,
 				0503D2521B03838300BC1ACE /* main.m in Sources */,
+				05ECA5261B0FDE0E00BC5A7C /* ChatClient.m in Sources */,
 				058313451B0A59E1003822EE /* FriendsClient.m in Sources */,
 				0503D27A1B03C00000BC1ACE /* LoginViewController.m in Sources */,
 				0583135A1B0A6BFA003822EE /* ChatMessagesViewController.m in Sources */,

@@ -8,8 +8,15 @@
 
 #import "ChatMessagesViewController.h"
 #import "JSQMessages.h"
+#import "ChatClient.h"
 
 @interface ChatMessagesViewController ()
+
+@property (nonatomic, strong) ChatClient *chatClient;
+
+@property (strong, nonatomic) NSDictionary *avatars;
+@property (strong, nonatomic) JSQMessagesBubbleImage *outgoingBubbleImageData;
+@property (strong, nonatomic) JSQMessagesBubbleImage *incomingBubbleImageData;
 
 @end
 
@@ -19,19 +26,22 @@
 {
     [super viewDidLoad];
     
-    self.title = @"JSQMessages";
+    self.title = @"Chat";
     
     /**
      *  You MUST set your senderId and display name
      */
-    self.senderId = kJSQDemoAvatarIdSquires;
-    self.senderDisplayName = kJSQDemoAvatarDisplayNameSquires;
+    User *currentUser = [User currentUser];
+    self.senderId = [NSString stringWithFormat:@"%@",currentUser.ID];
+    self.senderDisplayName = currentUser.username;
     
-    
+    [self customizeBubbles];
+    [self createAvatars];
+
     /**
      *  Load up our fake data for the demo
      */
-    self.demoData = [[DemoModelData alloc] init];
+    [self loadMessages];
     
     /**
      *  Register custom menu actions for cells.
@@ -39,11 +49,85 @@
     [UIMenuController sharedMenuController].menuItems = @[ [[UIMenuItem alloc] initWithTitle:@"Custom Action" action:@selector(customAction:)] ];
 }
 
+#pragma mark - Setup
+
+- (void)customizeBubbles
+{
+    JSQMessagesBubbleImageFactory *bubbleFactory = [[JSQMessagesBubbleImageFactory alloc] init];
+    
+    self.outgoingBubbleImageData = [bubbleFactory outgoingMessagesBubbleImageWithColor:[UIColor jsq_messageBubbleLightGrayColor]];
+    self.incomingBubbleImageData = [bubbleFactory incomingMessagesBubbleImageWithColor:[UIColor jsq_messageBubbleGreenColor]];
+}
+
+- (void)createAvatars
+{
+    User *currentUser = [User currentUser];
+    JSQMessagesAvatarImage *ownUserAvatarImage = [JSQMessagesAvatarImageFactory avatarImageWithImage:[UIImage imageWithData:currentUser.profilePicture]
+                                                                                   diameter:kJSQMessagesCollectionViewAvatarSizeDefault];
+    
+    JSQMessagesAvatarImage *chatUserAvatarImage = [JSQMessagesAvatarImageFactory avatarImageWithImage:[UIImage imageWithData:self.chatUser.profilePicture]
+                                                                                  diameter:kJSQMessagesCollectionViewAvatarSizeDefault];
+    self.avatars = @{ [NSString stringWithFormat:@"%@", currentUser.ID] : ownUserAvatarImage,
+                      [NSString stringWithFormat:@"%@", self.chatUser.ID] : chatUserAvatarImage};
+}
+
+- (void)loadMessages
+{
+    self.messages = [[NSMutableArray alloc] init];
+    self.chatClient = [[ChatClient alloc] init];
+    [self.chatClient getChatHistoryForFriendshipID:@3 completion:^(BOOL success, NSArray *chatHistory)
+     {
+         for (NSDictionary *messageDictionary in chatHistory)
+         {
+             User *currentUser = [User currentUser];
+             BOOL isOwnMessage = [messageDictionary[@"user_creator_id"] isEqualToNumber:[User currentUser].ID];
+             JSQMessage *message = [[JSQMessage alloc] initWithSenderId:[NSString stringWithFormat:@"%@",messageDictionary[@"user_creator_id"]]
+                                                      senderDisplayName: (isOwnMessage ? currentUser.username : self.chatUser.username)
+                                                                   date:[NSDate distantPast]
+                                                                   text:messageDictionary[@"message"]];
+             [self.messages addObject:message];
+         }
+         [self.collectionView reloadData];
+     }];
+}
+
+#pragma mark - JSQMessagesViewController method overrides
+
+- (void)didPressSendButton:(UIButton *)button
+           withMessageText:(NSString *)text
+                  senderId:(NSString *)senderId
+         senderDisplayName:(NSString *)senderDisplayName
+                      date:(NSDate *)date
+{
+    /**
+     *  Sending a message. Your implementation of this method should do *at least* the following:
+     *
+     *  1. Play sound (optional)
+     *  2. Add new id<JSQMessageData> object to your data source
+     *  3. Call `finishSendingMessage`
+     */
+    [JSQSystemSoundPlayer jsq_playMessageSentSound];
+    
+    JSQMessage *message = [[JSQMessage alloc] initWithSenderId:senderId
+                                             senderDisplayName:senderDisplayName
+                                                          date:date
+                                                          text:text];
+    
+    [self.messages addObject:message];
+    
+    [self.chatClient sentMessage:text friendshipID:@3 completion:^(BOOL success)
+     {
+         NSLog(@"message successfully sent");
+     }];
+    
+    [self finishSendingMessageAnimated:YES];
+}
+
 #pragma mark - JSQMessages CollectionView DataSource
 
 - (id<JSQMessageData>)collectionView:(JSQMessagesCollectionView *)collectionView messageDataForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [self.demoData.messages objectAtIndex:indexPath.item];
+    return [self.messages objectAtIndex:indexPath.item];
 }
 
 - (id<JSQMessageBubbleImageDataSource>)collectionView:(JSQMessagesCollectionView *)collectionView messageBubbleImageDataForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -55,13 +139,13 @@
      *  Otherwise, return your previously created bubble image data objects.
      */
     
-    JSQMessage *message = [self.demoData.messages objectAtIndex:indexPath.item];
+    JSQMessage *message = [self.messages objectAtIndex:indexPath.item];
     
     if ([message.senderId isEqualToString:self.senderId]) {
-        return self.demoData.outgoingBubbleImageData;
+        return self.outgoingBubbleImageData;
     }
     
-    return self.demoData.incomingBubbleImageData;
+    return self.incomingBubbleImageData;
 }
 
 - (id<JSQMessageAvatarImageDataSource>)collectionView:(JSQMessagesCollectionView *)collectionView avatarImageDataForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -86,9 +170,9 @@
      *
      *  Override the defaults in `viewDidLoad`
      */
-    JSQMessage *message = [self.demoData.messages objectAtIndex:indexPath.item];
+    JSQMessage *message = [self.messages objectAtIndex:indexPath.item];
     
-    return [self.demoData.avatars objectForKey:message.senderId];
+    return [self.avatars objectForKey:message.senderId];
 }
 
 - (NSAttributedString *)collectionView:(JSQMessagesCollectionView *)collectionView attributedTextForCellTopLabelAtIndexPath:(NSIndexPath *)indexPath
@@ -100,7 +184,7 @@
      *  Show a timestamp for every 3rd message
      */
     if (indexPath.item % 3 == 0) {
-        JSQMessage *message = [self.demoData.messages objectAtIndex:indexPath.item];
+        JSQMessage *message = [self.messages objectAtIndex:indexPath.item];
         return [[JSQMessagesTimestampFormatter sharedFormatter] attributedTimestampForDate:message.date];
     }
     
@@ -109,7 +193,7 @@
 
 - (NSAttributedString *)collectionView:(JSQMessagesCollectionView *)collectionView attributedTextForMessageBubbleTopLabelAtIndexPath:(NSIndexPath *)indexPath
 {
-    JSQMessage *message = [self.demoData.messages objectAtIndex:indexPath.item];
+    JSQMessage *message = [self.messages objectAtIndex:indexPath.item];
     
     /**
      *  iOS7-style sender name labels
@@ -119,7 +203,7 @@
     }
     
     if (indexPath.item - 1 > 0) {
-        JSQMessage *previousMessage = [self.demoData.messages objectAtIndex:indexPath.item - 1];
+        JSQMessage *previousMessage = [self.messages objectAtIndex:indexPath.item - 1];
         if ([[previousMessage senderId] isEqualToString:message.senderId]) {
             return nil;
         }
@@ -140,7 +224,7 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return [self.demoData.messages count];
+    return [self.messages count];
 }
 
 - (UICollectionViewCell *)collectionView:(JSQMessagesCollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -164,7 +248,7 @@
      *  Instead, override the properties you want on `self.collectionView.collectionViewLayout` from `viewDidLoad`
      */
     
-    JSQMessage *msg = [self.demoData.messages objectAtIndex:indexPath.item];
+    JSQMessage *msg = [self.messages objectAtIndex:indexPath.item];
     
     if (!msg.isMediaMessage) {
         
@@ -251,13 +335,13 @@
     /**
      *  iOS7-style sender name labels
      */
-    JSQMessage *currentMessage = [self.demoData.messages objectAtIndex:indexPath.item];
+    JSQMessage *currentMessage = [self.messages objectAtIndex:indexPath.item];
     if ([[currentMessage senderId] isEqualToString:self.senderId]) {
         return 0.0f;
     }
     
     if (indexPath.item - 1 > 0) {
-        JSQMessage *previousMessage = [self.demoData.messages objectAtIndex:indexPath.item - 1];
+        JSQMessage *previousMessage = [self.messages objectAtIndex:indexPath.item - 1];
         if ([[previousMessage senderId] isEqualToString:[currentMessage senderId]]) {
             return 0.0f;
         }

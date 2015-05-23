@@ -8,9 +8,11 @@
 
 #import "JSQMessagesViewController.h"
 #import "DemoModelData.h"
+#import "User.h"
 
 @interface ChatMessagesViewController : JSQMessagesViewController
 
-@property (strong, nonatomic) DemoModelData *demoData;
+@property (strong, nonatomic) NSMutableArray *messages;
+@property (strong, nonatomic) User *chatUser;
 
 @end

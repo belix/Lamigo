@@ -73,7 +73,6 @@ static NSString * const BaseURLString = @"http://vidiviciserver-dev.elasticbeans
 
     [manager POST:@"createUser" parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
         
-        NSLog(@"response %@",responseObject);
         user.ID = responseObject[@"id"];
         NSData *encodedObject = [NSKeyedArchiver archivedDataWithRootObject:user];
         [[NSUserDefaults standardUserDefaults] setObject:encodedObject forKey:@"currentUser"];

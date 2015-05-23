@@ -11,12 +11,13 @@
 #import "FriendsClient.h"
 #import "User.h"
 #import "MBProgressHUD.h"
-
+#import "ChatMessagesViewController.h"
 
 @interface ChatsTableViewController () <FriendsClientDelegate>
 
 @property (nonatomic, strong) NSArray *friends;
 @property (nonatomic, strong) FriendsClient *friendsClient;
+@property (nonatomic, strong) User *selectedUser;
 
 @end
 
@@ -62,6 +63,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    self.selectedUser = self.friends[indexPath.row];
     [self performSegueWithIdentifier:@"showChatViewController" sender:nil];
 }
 
@@ -110,14 +112,17 @@
 }
 */
 
-/*
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"showChatViewController"])
+    {
+        ChatMessagesViewController *destinationViewController = [segue destinationViewController];
+        destinationViewController.chatUser = self.selectedUser;
+    }
+ 
 }
-*/
+
 
 @end
